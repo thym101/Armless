@@ -1,0 +1,66 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1729344814
+d9spuwer2c491.webp::CompressedTexture2D::6434376420989121744::1729344488::1729344583::1::::<><>::
+dragon poke.png::CompressedTexture2D::2307664137776659682::1729344488::1729344583::1::::<><>::
+icon.svg::CompressedTexture2D::5008424826326370759::1729344488::1729344583::1::::<><>::
+::res://arcadeclassic (1)/::1729344582
+ARCADECLASSIC.TTF::FontFile::8020601778404237756::1729344488::1729344582::1::::<><>::
+pizzadudedotdk.txt::TextFile::-1::1729344488::0::1::::<><>::
+::res://Monster/::1729344693
+dragon poke.png::CompressedTexture2D::2485699068933629994::1729344488::1729344583::1::::<><>::
+dragon_poke.tscn::PackedScene::5922770944858749237::1729344488::0::1::::<><>::uid://7435khsjhisw::::res://dragon poke.png
+::res://Monster/arcadeclassic (1)/::1729344582
+ARCADECLASSIC.TTF::FontFile::2991742174113652398::1729344488::1729344582::1::::<><>::
+pizzadudedotdk.txt::TextFile::-1::1729344488::0::1::::<><>::
+::res://Monster/Hắc Lang - Black Wolf/::1729344782
+Stat-Hắc-Lang.txt::TextFile::-1::1729306479::0::1::::<><>::
+::res://Monster/Hắc Lang - Black Wolf/BG/::1729344707
+DALL_E_2024-10-19_00.40.06_-_A_pixel_art_of_a_wolf_claw_designed_in_a_16x16_grid._The_claw_should_be_sharp_and_detailed__with_curved_talons__depicted_in_grayscale_or_dark_tones_to-removebg-preview.png::CompressedTexture2D::491117613925854790::0::0::1::::<><>::
+::res://Monster/Hắc Lang - Black Wolf/Timber Wolf/::1729344707
+TimberWolf.png::CompressedTexture2D::1723325421647751263::1728853204::1729344707::1::::<><>::
+::res://Monster/Khổng Lồ Một Mắt - Crushing Cyclops/::1729344693
+Stat-Khổng-Lồ-Một-Mắt.txt::TextFile::-1::1729308388::0::1::::<><>::
+::res://Monster/Khổng Lồ Một Mắt - Crushing Cyclops/Crushing Cyclops/::1729344707
+CrushingCyclops.png::CompressedTexture2D::4369534465824272474::1721667998::1729344707::1::::<><>::
+::res://Monster/Mèo - Cruel Abominable Tyrant (CAT)/::1729344693
+Stat-Mèo.txt::TextFile::-1::1729308974::0::1::::<><>::
+::res://Monster/Mèo - Cruel Abominable Tyrant (CAT)/Meowing Cat/::1729344707
+MeowingCat.png::CompressedTexture2D::6207958686767351130::1728853204::1729344707::1::::<><>::
+::res://Monster/Rồng Rêu - Moss Wyrm/::1729344693
+Stat-Rồng-Rêu.txt::TextFile::-1::1729309231::0::1::::<><>::
+::res://Monster/Rồng Rêu - Moss Wyrm/Adult Green Dragon/::1729344707
+AdultGreenDragon.png::CompressedTexture2D::6909305683817770349::1710773384::1729344707::1::::<><>::
+::res://Monster/Rồng Đồng - Bronze Dragon/::1729344693
+Stat-Rồng-Đồng.txt::TextFile::-1::1729306728::0::1::::<><>::
+::res://Monster/Rồng Đồng - Bronze Dragon/Mature Bronze Dragon/::1729344707
+MatureBronzeDragon.png::CompressedTexture2D::8686582193925224940::1710951774::1729344707::1::::<><>::
+::res://Monster/Thần Tinh Tú - Divine Planetar/::1729344693
+Stat-Thần-Tinh-Tú.txt::TextFile::-1::1729308659::0::1::::<><>::
+::res://Monster/Thần Tinh Tú - Divine Planetar/Divine Planetar/::1729344707
+DivinePlanetar.png::CompressedTexture2D::5061860385182859800::1724339210::1729344707::1::::<><>::
+::res://Monster/Thủy Xà - Sea Serpent/::1729344693
+Stat-Thủy-Xà.txt::TextFile::-1::1729308375::0::1::::<><>::
+::res://Monster/Thủy Xà - Sea Serpent/Merfolk Aquamancer/::1729344707
+MerfolkAquamancerIdleSide.png::CompressedTexture2D::4708722446561584784::1683060462::1729344707::1::::<><>::
+::res://Monster/Troll Đá - Stone Troll/::1729344693
+Stat-Troll-Đá.txt::TextFile::-1::1729309315::0::1::::<><>::
+::res://Monster/Troll Đá - Stone Troll/Stone Troll/::1729344707
+StoneTroll.png::CompressedTexture2D::5674611583580088950::1721690766::1729344707::1::::<><>::
+::res://Monster/Yêu Tinh Bay - Grinning Gremlin/::1729344693
+Stat-Yêu-Tinh_Bay.txt::TextFile::-1::1729307239::0::1::::<><>::
+::res://Monster/Yêu Tinh Bay - Grinning Gremlin/grinning gremlin/::1729344707
+GrinningGremlin.png::CompressedTexture2D::8572876962493859735::1695780630::1729344707::1::::<><>::
+::res://Monster/Yêu Tinh Trinh Sát - Goblin Wolf Rider/::1729344693
+Stat-Yêu-Tinh-Trinh-Sát.txt::TextFile::-1::1729308382::0::1::::<><>::
+::res://Monster/Yêu Tinh Trinh Sát - Goblin Wolf Rider/goblin wolf rider/::1729344707
+GoblinWolfRider.png::CompressedTexture2D::7451089178499362808::1715353002::1729344707::1::::<><>::
+::res://Scene/::1729345229
+background.tscn::PackedScene::6893825038466269428::1729345229::0::1::::<><>::res://Script/Battle.gd<>uid://dlkedmdm12it8::::res://src/enemy.tres<>uid://cxw4ie7o0tadc::::res://d9spuwer2c491.webp<>uid://cqnbf38tcq6wn::::res://Monster/dragon_poke.tscn<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
+button.tscn::PackedScene::8290374179715814780::1729344488::0::1::::<><>::uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
+::res://Script/::1729345229
+BaseEnemy.gd::GDScript::-1::1729345229::0::1::::<>Resource<>::
+Battle.gd::GDScript::-1::1729344488::0::1::::<>Control<>::
+health.gd::GDScript::-1::1729344488::0::1::::<>Node<>::
+Player.gd::GDScript::-1::1729345539::0::1::::<>Node<>::
+::res://src/::1729344814
+enemy.tres::Resource::7952231969486693631::1729344811::0::1::::<><>::res://Script/BaseEnemy.gd<>uid://bboddogb8jy7s::::res://Monster/dragon poke.png

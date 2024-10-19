@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="Cougar"
-run/main_scene="res://background.tscn"
+run/main_scene="res://Scene/background.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Health="*res://src/health.gd"
+Health="*res://Script/health.gd"
+
+[dotnet]
+
+project/assembly_name="Cougar"

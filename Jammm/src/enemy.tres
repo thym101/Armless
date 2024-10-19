@@ -1,7 +1,8 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://dlkedmdm12it8"]
 
-[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_cua80"]
+[ext_resource type="Script" path="res://Script/BaseEnemy.gd" id="1_cua80"]
 [ext_resource type="Texture2D" uid="uid://bboddogb8jy7s" path="res://Monster/dragon poke.png" id="2_0v3c5"]
+
 
 [resource]
 script = ExtResource("1_cua80")

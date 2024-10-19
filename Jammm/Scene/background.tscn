@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://c5hoj5uwpo50k"]
 
-[ext_resource type="Script" path="res://Battle.gd" id="1_31qin"]
-[ext_resource type="Texture2D" uid="uid://cxw4ie7o0tadc" path="res://d9spuwer2c491.webp" id="1_oynqv"]
-[ext_resource type="Resource" uid="uid://dlkedmdm12it8" path="res://src/enemy.tres" id="2_47qah"]
-[ext_resource type="PackedScene" uid="uid://cqnbf38tcq6wn" path="res://Monster/dragon_poke.tscn" id="2_qbj6r"]
-[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="3_5lrof"]
+[ext_resource type="Script" path="res://Script/Battle.gd" id="1_0e6o8"]
+[ext_resource type="Resource" uid="uid://dlkedmdm12it8" path="res://src/enemy.tres" id="2_23i7j"]
+[ext_resource type="Texture2D" uid="uid://cxw4ie7o0tadc" path="res://d9spuwer2c491.webp" id="3_jqol0"]
+[ext_resource type="PackedScene" uid="uid://cqnbf38tcq6wn" path="res://Monster/dragon_poke.tscn" id="4_cpsqg"]
+[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="5_5ekuj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8ql2"]
 bg_color = Color(0.752941, 0.756863, 0.745098, 1)
@@ -61,28 +61,12 @@ expand_margin_bottom = 3.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo2ma"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_utdjs"]
-resource_name = "enemy_damage"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Monster/Dragon:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_jlmdg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Monster/Dragon:modulate")
+tracks/0/path = NodePath("Player/Dragon:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -91,18 +75,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player/Dragon:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
+
+[sub_resource type="Animation" id="Animation_utdjs"]
+resource_name = "enemy_damage"
+length = 0.5
 
 [sub_resource type="Animation" id="Animation_ujpdc"]
 resource_name = "player_damaged"
@@ -130,14 +106,14 @@ _data = {
 [node name="Battle" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_31qin")
-enemy = ExtResource("2_47qah")
+script = ExtResource("1_0e6o8")
+enemy = ExtResource("2_23i7j")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1150.0
 offset_bottom = 646.0
-texture = ExtResource("1_oynqv")
+texture = ExtResource("3_jqol0")
 
 [node name="Player" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -153,7 +129,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_b8ql2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_t3el0")
 value = 70.0
 
-[node name="Dragon" parent="Player" instance=ExtResource("2_qbj6r")]
+[node name="Dragon" parent="Player" instance=ExtResource("4_cpsqg")]
 position = Vector2(88, 90)
 scale = Vector2(2, 2)
 
@@ -170,10 +146,6 @@ size_flags_vertical = 10
 theme_override_styles/background = SubResource("StyleBoxFlat_b8ql2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_t3el0")
 value = 70.0
-
-[node name="Dragon" parent="Monster" instance=ExtResource("2_qbj6r")]
-position = Vector2(80, 87)
-scale = Vector2(2, 2)
 
 [node name="Action" type="Panel" parent="."]
 layout_mode = 0
@@ -207,7 +179,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_5lrof")
+theme_override_fonts/font = ExtResource("5_5ekuj")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0hv5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uo2ma")
@@ -222,7 +194,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_5lrof")
+theme_override_fonts/font = ExtResource("5_5ekuj")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0hv5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uo2ma")
@@ -237,7 +209,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_5lrof")
+theme_override_fonts/font = ExtResource("5_5ekuj")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0hv5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uo2ma")
@@ -252,7 +224,7 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_5lrof")
+theme_override_fonts/font = ExtResource("5_5ekuj")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0hv5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uo2ma")

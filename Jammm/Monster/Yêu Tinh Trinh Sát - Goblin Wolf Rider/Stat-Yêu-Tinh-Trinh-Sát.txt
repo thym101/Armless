@@ -1,0 +1,4 @@
+Hand: 6
+Leg: 9
+Chest: 4
+Tail: 6

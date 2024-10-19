@@ -1,0 +1,4 @@
+Hand: 6
+Leg: 5
+Chest: 7
+Wing: 6
