@@ -2,18 +2,57 @@ extends Control
 
 @export var enemy: Resource = null
 var current_player_health = 0
+var curent_player_armor = 0
+var curent_player_speed = 0
+var curent_player_dodge = 0
+var curent_player_dame = 0
 var current_enemy_health = 0
 var is_enemy_attack = false
+var player_stats
 
 func _ready():
+	player_stats = CharactorStat.get_stats()
+	var arm = player_stats.arm
+	var leg = player_stats.leg
+	var chest = player_stats.chest
+	var appendages = player_stats.appendages
+	
+	setup_idle_animation()
+
+	current_player_health = (arm + leg + chest + appendages) * 10
+	curent_player_armor = (chest * 2) + arm + leg + (appendages * 2)
+	curent_player_speed = (leg * 3) + (appendages * 2)
+	curent_player_dodge = (leg * 2) + arm
+	curent_player_dame = (arm * 3) + appendages
+	
 	set_health($Player/Panel2/ProgressBar, Health.current_health, Health.max_health)
 	set_health($Monster/Panel/ProgressBar, enemy.health, enemy.health)
 	#$Monster/Dragon/DragonPoke.texture = enemy.texture
 	#$Action.hide()
 	$Action/textbox.hide()
 	
-	current_player_health = Health.current_health
-	current_enemy_health = enemy.health
+	$Player/player.play("idle")
+
+func setup_idle_animation():
+	var sprite_frames = SpriteFrames.new()
+	var texture = load(player_stats.sprite_path)
+	var frame_width = texture.get_width() / player_stats.frame_count
+	var frame_height = texture.get_height()
+	
+	# Create the idle animation
+	sprite_frames.add_animation("idle")
+	sprite_frames.set_animation_speed("idle", 4)  # 8 FPS for idle
+	sprite_frames.set_animation_loop("idle", true)
+	
+	# Add frames from spritesheet
+	for i in range(player_stats.frame_count):
+		var atlas = AtlasTexture.new()
+		atlas.atlas = texture
+		atlas.region = Rect2(i * frame_width, 0, frame_width, frame_height)
+		sprite_frames.add_frame("idle", atlas)
+	
+	# Apply the frames to the AnimatedSprite2D
+	$Player/player.sprite_frames = sprite_frames
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

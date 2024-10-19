@@ -1,42 +1,41 @@
-[gd_scene load_steps=32 format=3 uid="uid://c5hoj5uwpo50k"]
+[gd_scene load_steps=31 format=3 uid="uid://c5hoj5uwpo50k"]
 
 [ext_resource type="Script" path="res://Script/Battle.gd" id="1_0e6o8"]
 [ext_resource type="Resource" uid="uid://dlkedmdm12it8" path="res://src/enemy.tres" id="2_23i7j"]
 [ext_resource type="Texture2D" uid="uid://dw4n8bol2lypy" path="res://background.webp" id="3_m72fd"]
-[ext_resource type="Texture2D" uid="uid://cupgf4q71t2je" path="res://Monster/Mèo - Cruel Abominable Tyrant (CAT)/Meowing Cat/MeowingCat.png" id="4_r80pw"]
 [ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="5_5ekuj"]
 [ext_resource type="Texture2D" uid="uid://bbnj75233vgij" path="res://Monster/Hắc Lang - Black Wolf/TimberWolf.png" id="5_m3r2p"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_on2mo"]
-atlas = ExtResource("4_r80pw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fex27"]
+atlas = ExtResource("5_m3r2p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clr6r"]
+atlas = ExtResource("5_m3r2p")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0elny"]
-atlas = ExtResource("4_r80pw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_caw1c"]
+atlas = ExtResource("5_m3r2p")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_twoif"]
-atlas = ExtResource("4_r80pw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht1q5"]
+atlas = ExtResource("5_m3r2p")
 region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cndq"]
-atlas = ExtResource("4_r80pw")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uyyao"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_on2mo")
+"texture": SubResource("AtlasTexture_fex27")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0elny")
+"texture": SubResource("AtlasTexture_clr6r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_twoif")
+"texture": SubResource("AtlasTexture_caw1c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5cndq")
+"texture": SubResource("AtlasTexture_ht1q5")
 }],
 "loop": true,
 "name": &"default",

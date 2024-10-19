@@ -1,6 +1,8 @@
+Sprite2D
+Button
+VBoxContainer
 AnimationPlayer
 CollisionShape2D
-Sprite2D
 Line2D
 Node2D
 Area2D

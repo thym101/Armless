@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnphayc05emt6"]
+
+[ext_resource type="Script" path="res://Script/choosecharactor.gd" id="1_e13k7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e13k7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Speed" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Speed"
+
+[node name="Attack" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Attack"
+
+[node name="Health" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Health"
+
+[connection signal="pressed" from="VBoxContainer/Speed" to="." method="_on_speed_pressed"]
+[connection signal="pressed" from="VBoxContainer/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="VBoxContainer/Health" to="." method="_on_health_pressed"]
