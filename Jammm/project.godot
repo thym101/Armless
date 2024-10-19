@@ -22,3 +22,7 @@ Health="*res://Script/health.gd"
 [dotnet]
 
 project/assembly_name="Cougar"
+
+[layer_names]
+
+2d_physics/layer_4="map_rooms"
