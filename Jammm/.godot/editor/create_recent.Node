@@ -1,2 +1,12 @@
+Label
+Panel
+CollisionShape2D
+CharacterBody2D
+AnimationPlayer
+Button
+TextureButton
+GridContainer
+AnimatedSprite2D
+Sprite2D
 Node
 Control
