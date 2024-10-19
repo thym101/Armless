@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqnbf38tcq6wn"]
+
+[ext_resource type="Texture2D" uid="uid://7435khsjhisw" path="res://dragon poke.png" id="1_nakyp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8rjj3"]
+radius = 36.0
+height = 86.0
+
+[node name="Dragon" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8rjj3")
+
+[node name="DragonPoke" type="Sprite2D" parent="."]
+position = Vector2(1.52588e-05, -4)
+scale = Vector2(0.134868, 0.141447)
+texture = ExtResource("1_nakyp")
