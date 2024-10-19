@@ -21,9 +21,6 @@ var random_room_type_weights = {
 var random_room_type_total_weight := 0
 var map_data: Array[Array]
 
-func _ready():
-	generate_map()
-
 func generate_map() -> Array[Array]:
 	map_data = _generate_initial_grid()
 	var starting_points := _get_random_starting_points()
@@ -32,8 +29,12 @@ func generate_map() -> Array[Array]:
 		var current_j := j
 		for i in FLOORS - 1:
 			current_j = _setup_connection(i, current_j)
+			
+	_setup_boss_room()
+	_setup_random_room_weights()
+	_setup_room_types()
 	
-	return []
+	return map_data
 	
 func _generate_initial_grid() -> Array[Array]:
 	var result: Array[Array] = []
@@ -92,7 +93,7 @@ func _would_cross_existing_path(i: int, j:int, room:Room) -> bool:
 	var right_neighbour: Room
 	
 	if j > 0:
-		left_neighbour = map_data[i][j + 1]
+		left_neighbour = map_data[i][j - 1]
 	if j < MAP_WIDTH - 1:
 		right_neighbour = map_data[i][j + 1]
 		
@@ -107,3 +108,92 @@ func _would_cross_existing_path(i: int, j:int, room:Room) -> bool:
 				return true
 				
 	return false
+
+func _setup_boss_room() -> void:
+	var middle := floori(MAP_WIDTH * 0.5)
+	var boss_room := map_data[FLOORS - 1][middle] as Room
+	
+	for j in MAP_WIDTH:
+		var current_room = map_data[FLOORS - 2][j] as Room
+		if current_room.next_rooms:
+			current_room.next_rooms = [] as Array[Room]
+			current_room.next_rooms.append(boss_room)
+			
+	boss_room.type = Room.Type.BOSS
+	
+func _setup_random_room_weights() -> void:
+	random_room_type_weights[Room.Type.MONSTER] = MONSTER_ROOM_WEIGHT
+	random_room_type_weights[Room.Type.CAMPFIRE] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT
+	random_room_type_weights[Room.Type.SHOP] = MONSTER_ROOM_WEIGHT + CAMPFIRE_ROOM_WEIGHT + SHOP_ROOM_WEIGHT
+	
+	random_room_type_total_weight = random_room_type_weights[Room.Type.SHOP]
+	
+func _setup_room_types() -> void:
+	for room: Room in map_data[0]:
+		if room.next_rooms.size() > 0:
+			room.type = Room.Type.MONSTER
+	
+	for room: Room in map_data[8]:
+		if room.next_rooms.size() > 0:
+			room.type = Room.Type.TREASURE
+			
+	for room: Room in map_data[13]:
+		if room.next_rooms.size() > 0:
+			room.type = Room.Type.CAMPFIRE
+	
+	for current_floor in map_data:
+		for room: Room in current_floor:
+			for next_room: Room in room.next_rooms:
+				if next_room.type == Room.Type.NOT_ASSIGNED:
+					_set_room_randomly(next_room)
+					
+func  _set_room_randomly(room_to_set: Room) -> void:
+	var campfire_below_4 := true
+	var consecutive_campfire := true
+	var consecutive_shop := true
+	var campfire_on_13 := true
+	
+	var type_candidate: Room.Type
+	
+	while campfire_below_4 or consecutive_campfire or consecutive_shop or campfire_on_13:
+		type_candidate = _get_random_room_type_by_weight()
+		
+		var is_campfire := type_candidate == Room.Type.CAMPFIRE
+		var has_campfire_parent := _room_has_parent_of_type(room_to_set, Room.Type.CAMPFIRE)
+		var is_shop := type_candidate == Room.Type.SHOP
+		var has_shop_parent := _room_has_parent_of_type(room_to_set, Room.Type.SHOP)
+		
+		campfire_below_4 = is_campfire and room_to_set.row < 3
+		consecutive_campfire = is_campfire and has_campfire_parent
+		consecutive_shop = is_shop and has_shop_parent
+		campfire_on_13 = is_campfire and room_to_set.row == 12
+	
+	room_to_set.type = type_candidate
+	
+func _room_has_parent_of_type(room: Room, type: Room.Type) -> bool:
+	var parents: Array[Room] = []
+	if room.column > 0 and room.row > 0:
+		var parent_candidate := map_data[room.row - 1][room.column - 1] as Room
+		if parent_candidate.next_rooms.has(room):
+			parents.append(parent_candidate)
+			
+	if room.column < MAP_WIDTH - 1 and room.row > 0:
+		var parent_candidate := map_data[room.row - 1][room.column + 1] as Room
+		if parent_candidate.next_rooms.has(room):
+			parents.append(parent_candidate)
+			
+	for parent: Room in parents:
+		if parent.type == type:
+			return true
+	
+	return false
+	
+func _get_random_room_type_by_weight() -> Room.Type:
+	var roll := randf_range(0.0, random_room_type_total_weight)
+	
+	for type: Room.Type in random_room_type_weights:
+		if random_room_type_weights[type] > roll:
+			return type
+	
+	return Room.Type.MONSTER
+	
