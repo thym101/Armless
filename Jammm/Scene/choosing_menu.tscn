@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bntyxf7f7th3d"]
+
+[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="2_630bp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sq3q0"]
+bg_color = Color(0.156863, 0.156863, 0.14902, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uxi6"]
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpds8"]
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o482c"]
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecnpl"]
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fcj4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uxi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpds8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o482c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecnpl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1162.0
+offset_bottom = 652.0
+expand_mode = 1
+
+[node name="choose_button" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 486.0
+offset_right = 705.0
+offset_bottom = 567.0
+theme_override_fonts/font = ExtResource("2_630bp")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_sq3q0")
+text = "CHOOSE"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(577, 335)
+scale = Vector2(3.73, 3.45)
+sprite_frames = SubResource("SpriteFrames_fcj4b")
+frame_progress = 0.0104974

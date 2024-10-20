@@ -1,21 +1,5 @@
-res://Scene/background.tscn
+res://Scene/starting_menu.tscn
 res://Script/BaseEnemy.gd
 res://Script/Battle.gd
-res://Scene/map.tscn
-res://Script/charactorStat.gd
-res://Script/global.gd
 res://Scene/choosecharactor.tscn
-res://Script/choosecharactor.gd
-res://Scene/world_icon.tscn
-res://Script/world_icon.gd
-res://Scene/world_select.tscn
-res://Script/world_select.gd
-res://Script/level_icon.gd
-res://Scene/level_icon.tscn
-res://Script/level_select.gd
-res://Scene/level_select.tscn
-res://Script/enemyStats.gd
-res://Script/level_data.gd
-res://Monster/Hắc Lang - Black Wolf/Stat-Hắc-Lang.txt
-res://Monster/Khổng Lồ Một Mắt - Crushing Cyclops/Stat-Khổng-Lồ-Một-Mắt.txt
-res://Monster/Rồng Đồng - Bronze Dragon/Stat-Rồng-Đồng.txt
+res://Scene/background.tscn

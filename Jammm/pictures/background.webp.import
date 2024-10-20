@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7435khsjhisw"
-path="res://.godot/imported/dragon poke.png-b2f7ba6d2e73dd5a2d9f89cd5d3abcef.ctex"
+uid="uid://b7yfei4w1gdoo"
+path="res://.godot/imported/background.webp-6b36bdac270057b161fe0bd25730123e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dragon poke.png"
-dest_files=["res://.godot/imported/dragon poke.png-b2f7ba6d2e73dd5a2d9f89cd5d3abcef.ctex"]
+source_file="res://pictures/background.webp"
+dest_files=["res://.godot/imported/background.webp-6b36bdac270057b161fe0bd25730123e.ctex"]
 
 [params]
 

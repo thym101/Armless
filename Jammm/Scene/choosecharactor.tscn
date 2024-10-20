@@ -1,6 +1,141 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnphayc05emt6"]
+[gd_scene load_steps=26 format=3 uid="uid://cnphayc05emt6"]
 
 [ext_resource type="Script" path="res://Script/choosecharactor.gd" id="1_e13k7"]
+[ext_resource type="Texture2D" uid="uid://biar5xrtd7uvn" path="res://pictures/forest_background.webp" id="2_ykypt"]
+[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="3_o6d62"]
+[ext_resource type="Texture2D" uid="uid://bbnj75233vgij" path="res://Monster/Hắc Lang - Black Wolf/TimberWolf.png" id="4_sbn1y"]
+[ext_resource type="Texture2D" uid="uid://cm33a2n6dybr7" path="res://Monster/Troll Đá - Stone Troll/Stone Troll/StoneTroll.png" id="5_d3yak"]
+[ext_resource type="Texture2D" uid="uid://dv030e8tls7lw" path="res://Monster/Rồng Đồng - Bronze Dragon/Mature Bronze Dragon/MatureBronzeDragon.png" id="6_0ve40"]
+[ext_resource type="FontFile" uid="uid://6rof10ysccs2" path="res://redensek/REDENSEK.TTF" id="7_wnfx6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvd0f"]
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7dh7"]
+atlas = ExtResource("4_sbn1y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vf8l"]
+atlas = ExtResource("4_sbn1y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3gid"]
+atlas = ExtResource("4_sbn1y")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ibcg"]
+atlas = ExtResource("4_sbn1y")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7w4ne"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7dh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vf8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3gid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ibcg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2i24"]
+bg_color = Color(0.14902, 0.14902, 0.14902, 0.513726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evcco"]
+atlas = ExtResource("5_d3yak")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0qfp"]
+atlas = ExtResource("5_d3yak")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3h13"]
+atlas = ExtResource("5_d3yak")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkyta"]
+atlas = ExtResource("5_d3yak")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qo467"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evcco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0qfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3h13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkyta")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tlq3"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.564706)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j3th"]
+atlas = ExtResource("6_0ve40")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dom7u"]
+atlas = ExtResource("6_0ve40")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6782"]
+atlas = ExtResource("6_0ve40")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sumv2"]
+atlas = ExtResource("6_0ve40")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ou3sg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j3th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dom7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6782")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sumv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,23 +146,197 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e13k7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MenuScreen" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_ykypt")
+expand_mode = 1
 
-[node name="Speed" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Speed"
+[node name="Select_your_monster" type="Label" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 292.0
+offset_right = 877.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("3_o6d62")
+theme_override_font_sizes/font_size = 60
+text = "SELECT YOUR  MONSTER
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Attack" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Attack"
+[node name="Control" type="Panel" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 190.0
+offset_right = 330.0
+offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvd0f")
 
-[node name="Health" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Speed" type="Button" parent="MenuScreen/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimatedSprite2D" parent="MenuScreen/Control"]
+texture_filter = 1
+position = Vector2(104, 66)
+scale = Vector2(9.625, 8.40625)
+sprite_frames = SubResource("SpriteFrames_7w4ne")
+autoplay = "default"
+frame_progress = 0.97005
+
+[node name="Label" type="Label" parent="MenuScreen/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_o6d62")
+theme_override_font_sizes/font_size = 30
+text = "Fenrir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Panel" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 190.0
+offset_right = 680.0
+offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g2i24")
+
+[node name="Attack" type="Button" parent="MenuScreen/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MenuScreen/Control2"]
+texture_filter = 1
+position = Vector2(106, 74)
+scale = Vector2(9.9375, 7.78125)
+sprite_frames = SubResource("SpriteFrames_qo467")
+autoplay = "default"
+frame_progress = 0.14843
+
+[node name="Label" type="Label" parent="MenuScreen/Control2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_o6d62")
+theme_override_font_sizes/font_size = 30
+text = "BOLG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 190.0
+offset_right = 1022.0
+offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tlq3")
+
+[node name="Health" type="Button" parent="MenuScreen/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Health"
 
-[connection signal="pressed" from="VBoxContainer/Speed" to="." method="_on_speed_pressed"]
-[connection signal="pressed" from="VBoxContainer/Attack" to="." method="_on_attack_pressed"]
-[connection signal="pressed" from="VBoxContainer/Health" to="." method="_on_health_pressed"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MenuScreen/Panel"]
+texture_filter = 1
+position = Vector2(108, 66)
+scale = Vector2(8.46484, 8.21484)
+sprite_frames = SubResource("SpriteFrames_ou3sg")
+autoplay = "default"
+frame_progress = 0.769529
+
+[node name="Label" type="Label" parent="MenuScreen/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_o6d62")
+theme_override_font_sizes/font_size = 30
+text = "Placidusax"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Click" type="Label" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 102.0
+offset_right = 829.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("3_o6d62")
+theme_override_font_sizes/font_size = 30
+text = "Click  to  choose"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wolf_description" type="Label" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 412.0
+offset_right = 399.0
+offset_bottom = 591.0
+theme_override_fonts/font = ExtResource("7_wnfx6")
+theme_override_font_sizes/font_size = 40
+text = "Arm: 6
+Leg: 7 
+Chest: 6
+Appendages: 7"
+vertical_alignment = 1
+
+[node name="giant_description" type="Label" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 412.0
+offset_right = 710.0
+offset_bottom = 589.0
+theme_override_fonts/font = ExtResource("7_wnfx6")
+theme_override_font_sizes/font_size = 40
+text = "Arm: 8
+Leg: 6
+Chest: 5
+Appendages: 6"
+vertical_alignment = 1
+
+[node name="dragon_description" type="Label" parent="MenuScreen"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 410.0
+offset_right = 1047.0
+offset_bottom = 587.0
+theme_override_fonts/font = ExtResource("7_wnfx6")
+theme_override_font_sizes/font_size = 40
+text = "Arm: 7
+Leg: 6
+Chest: 8
+Appendages: 5"
+
+[connection signal="pressed" from="MenuScreen/Control/Speed" to="." method="_on_speed_pressed"]
+[connection signal="pressed" from="MenuScreen/Control2/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="MenuScreen/Panel/Health" to="." method="_on_health_pressed"]

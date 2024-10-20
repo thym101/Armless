@@ -28,7 +28,7 @@ func set_attack_stats():
 		"leg": 6,      # Tốc độ chân
 		"chest": 5,     # Phòng thủ ngực
 		"appendages": 6, # Khả năng linh hoạt (đuôi/cánh)
-		"sprite_path": "res://Monster/Khổng Lồ Một Mắt - Crushing Cyclops/Crushing Cyclops/CrushingCyclops.png",
+		"sprite_path": "res://Monster/Troll Đá - Stone Troll/Stone Troll/StoneTroll.png",
 		"frame_count": 4
 	}
 

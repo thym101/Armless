@@ -3,9 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$VBoxContainer/Speed.pressed.connect(_on_speed_pressed)
-	$VBoxContainer/Attack.pressed.connect(_on_attack_pressed)
-	$VBoxContainer/Health.pressed.connect(_on_health_pressed)
+	$MenuScreen/Control/Speed.pressed.connect(_on_speed_pressed)
+	$MenuScreen/Control2/Attack.pressed.connect(_on_attack_pressed)
+	$MenuScreen/Panel/Health.pressed.connect(_on_health_pressed)
 
 func _on_speed_pressed():
 	CharactorStat.set_speed_stats()
