@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://xm5n7h0tgum7"]
+
+[ext_resource type="Texture2D" uid="uid://62v240o0b332" path="res://pictures/menu_background.jpg" id="1_nl7hk"]
+[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="2_xfavs"]
+[ext_resource type="Texture2D" uid="uid://b1wtnhpgfbd2v" path="res://witch_sheet.png" id="3_1ewoc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osndb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61mj0"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 0.537255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g828r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjp4l"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 0.537255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3oar"]
+atlas = ExtResource("3_1ewoc")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmrkr"]
+atlas = ExtResource("3_1ewoc")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyq1c"]
+atlas = ExtResource("3_1ewoc")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn5ob"]
+atlas = ExtResource("3_1ewoc")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctrn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3oar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmrkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyq1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn5ob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Panel" type="TextureRect"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nl7hk")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 360.0
+offset_right = 776.0
+offset_bottom = 448.0
+theme_override_fonts/font = ExtResource("2_xfavs")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_osndb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_61mj0")
+text = "START GAME"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 448.0
+offset_right = 776.0
+offset_bottom = 536.0
+theme_override_fonts/font = ExtResource("2_xfavs")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_g828r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjp4l")
+text = "QUIT"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(792, 272)
+scale = Vector2(3.41, 3.345)
+sprite_frames = SubResource("SpriteFrames_ctrn5")
+autoplay = "default"
+frame_progress = 0.599854

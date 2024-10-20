@@ -1,8 +1,5 @@
-res://Scene/background.tscn
+res://Scene/starting_menu.tscn
 res://Script/BaseEnemy.gd
 res://Script/Battle.gd
-res://Scene/map.tscn
-res://Script/charactorStat.gd
-res://Script/global.gd
 res://Scene/choosecharactor.tscn
-res://Script/choosecharactor.gd
+res://Scene/background.tscn
