@@ -1,0 +1,129 @@
+[gd_scene load_steps=4 format=3 uid="uid://yijyqe082wwe"]
+
+[ext_resource type="Script" path="res://Script/level_select.gd" id="1_fafk7"]
+[ext_resource type="PackedScene" uid="uid://vt6dqc4xkp20" path="res://Scene/level_icon.tscn" id="1_nq6hm"]
+[ext_resource type="PackedScene" uid="uid://dh7vvdf6jjbiy" path="res://Scene/player_icon.tscn" id="3_tkoou"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fafk7")
+
+[node name="LevelIcon" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("1_nq6hm")]
+offset_left = 128.0
+offset_top = 512.0
+offset_right = 192.0
+offset_bottom = 576.0
+next_level_up = NodePath("../LevelIcon2")
+
+[node name="LevelIcon2" parent="." node_paths=PackedStringArray("next_level_down", "next_level_right") instance=ExtResource("1_nq6hm")]
+offset_left = 128.0
+offset_top = 384.0
+offset_right = 192.0
+offset_bottom = 448.0
+next_level_down = NodePath("../LevelIcon")
+next_level_right = NodePath("../LevelIcon3")
+
+[node name="LevelIcon3" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
+offset_left = 256.0
+offset_top = 384.0
+offset_right = 320.0
+offset_bottom = 448.0
+level_name = "2"
+next_level_up = NodePath("../LevelIcon4")
+next_level_left = NodePath("../LevelIcon2")
+next_level_right = NodePath("../LevelIcon13")
+
+[node name="LevelIcon13" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
+offset_left = 384.0
+offset_top = 384.0
+offset_right = 448.0
+offset_bottom = 448.0
+level_name = "3"
+next_level_left = NodePath("../LevelIcon3")
+next_level_right = NodePath("../LevelIcon6")
+
+[node name="LevelIcon6" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
+offset_left = 512.0
+offset_top = 384.0
+offset_right = 576.0
+offset_bottom = 448.0
+level_name = "5"
+next_level_up = NodePath("../LevelIcon8")
+next_level_left = NodePath("../LevelIcon13")
+next_level_right = NodePath("../LevelIcon7")
+
+[node name="LevelIcon7" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 704.0
+offset_bottom = 448.0
+level_name = "6"
+next_level_left = NodePath("../LevelIcon6")
+next_level_right = NodePath("../LevelIcon9")
+
+[node name="LevelIcon8" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("1_nq6hm")]
+offset_left = 512.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 320.0
+level_name = "7"
+next_level_down = NodePath("../LevelIcon6")
+
+[node name="LevelIcon9" parent="." node_paths=PackedStringArray("next_level_down", "next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
+offset_left = 768.0
+offset_top = 384.0
+offset_right = 832.0
+offset_bottom = 448.0
+level_name = "8"
+next_level_down = NodePath("../LevelIcon14")
+next_level_left = NodePath("../LevelIcon7")
+next_level_right = NodePath("../LevelIcon10")
+
+[node name="LevelIcon14" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("1_nq6hm")]
+offset_left = 768.0
+offset_top = 512.0
+offset_right = 832.0
+offset_bottom = 576.0
+level_name = "8"
+next_level_up = NodePath("../LevelIcon9")
+
+[node name="LevelIcon10" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("1_nq6hm")]
+offset_left = 896.0
+offset_top = 384.0
+offset_right = 960.0
+offset_bottom = 448.0
+level_name = "9"
+next_level_up = NodePath("../LevelIcon12")
+next_level_left = NodePath("../LevelIcon9")
+
+[node name="LevelIcon12" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("1_nq6hm")]
+offset_left = 896.0
+offset_top = 256.0
+offset_right = 960.0
+offset_bottom = 320.0
+level_name = "10"
+next_level_down = NodePath("../LevelIcon10")
+
+[node name="LevelIcon4" parent="." node_paths=PackedStringArray("next_level_up", "next_level_down") instance=ExtResource("1_nq6hm")]
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 320.0
+offset_bottom = 320.0
+level_name = "4"
+next_level_up = NodePath("../LevelIcon5")
+next_level_down = NodePath("../LevelIcon3")
+
+[node name="LevelIcon5" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("1_nq6hm")]
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 192.0
+next_level_down = NodePath("../LevelIcon4")
+
+[node name="PlayerIcon" parent="." instance=ExtResource("3_tkoou")]
+layout_mode = 0

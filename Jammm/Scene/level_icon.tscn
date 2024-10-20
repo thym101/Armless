@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://vt6dqc4xkp20"]
+
+[ext_resource type="Script" path="res://Script/level_icon.gd" id="1_k78uy"]
+
+[sub_resource type="Gradient" id="Gradient_r830x"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n8wpj"]
+gradient = SubResource("Gradient_r830x")
+width = 64
+
+[node name="LevelIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 120.0
+offset_top = 152.0
+offset_right = 184.0
+offset_bottom = 216.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("1_k78uy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -23.0
+offset_right = 43.0
+text = "World 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture1D_n8wpj")

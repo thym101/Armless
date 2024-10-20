@@ -1,4 +1,8 @@
+AnimatedSprite2D
+TextureRect
 Sprite2D
+Label
+Control
 Button
 VBoxContainer
 AnimationPlayer
@@ -7,4 +11,3 @@ Line2D
 Node2D
 Area2D
 Node
-Control

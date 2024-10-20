@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Health="*res://Script/health.gd"
 CharactorStat="*res://Script/charactorStat.gd"
+EnemyStats="*res://Script/enemyStats.gd"
 
 [display]
 

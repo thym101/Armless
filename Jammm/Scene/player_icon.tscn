@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh7vvdf6jjbiy"]
+
+[ext_resource type="Texture2D" uid="uid://corslk0o0j6qc" path="res://Asset/Adam_idle_16x16.png" id="1_au5ev"]
+
+[node name="PlayerIcon" type="TextureRect"]
+texture_filter = 1
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("1_au5ev")
