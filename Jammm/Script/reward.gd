@@ -2,6 +2,7 @@ extends Control
 
 var player_stats = CharactorStat.get_stats()
 var enemy_stats
+var count = 0
 
 func _ready():
 	$Control/Highest.text = str(Global.highest_target_name) + ": " + str(Global.highest_target_value)
@@ -13,11 +14,17 @@ func _ready():
 	
 func _on_forgive_pressed():
 	Global.additionalPoint = 15
+	Global.streak += 1
+	count += 1
+	
+	if count == 3:
+		Global.hearth += 1
+		count = 0
+		
 	if Global.streak == 2:
-		Global.streak
+		Global.streak = 0
 		get_tree().change_scene_to_file("res://Scene/stat_increase.tscn")
 	else: 
-		Global.streak += 1
 		get_tree().change_scene_to_file("res://Scene/level_select.tscn")
 
 func _on_kill_pressed():

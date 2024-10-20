@@ -249,7 +249,7 @@ position = Vector2(136, 96)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_70uxl")
 autoplay = "default"
-frame_progress = 0.554013
+frame_progress = 0.558648
 
 [node name="Label" type="Label" parent="Control2"]
 layout_mode = 0

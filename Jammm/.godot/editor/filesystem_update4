@@ -17,3 +17,4 @@ res://Script/enemyStats.gd
 res://Script/level_select.gd
 res://Scene/end.tscn
 res://Script/end.gd
+res://Script/StatIncrease.gd

@@ -9,7 +9,7 @@ var player_stats = CharactorStat.get_stats()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Path2D/PathFollow2D/PlayerIcon.global_position = current_level.global_position
-	$PlayerStats.text = "Arm: " + str(player_stats.arm) + "\n" + "Leg: " + str(player_stats.leg) + "\n" + "Chest: " + str(player_stats.chest) + "\n" + "Appendages: " + str(player_stats.appendages)  
+	$PlayerStats.text = "Arm: " + str(player_stats.arm) + "\n" + "Leg: " + str(player_stats.leg) + "\n" + "Chest: " + str(player_stats.chest) + "\n" + "Appendages: " + str(player_stats.appendages) + "\n" + "Life: " + str(Global.hearth)  
 
 func _input(event):
 	if event.is_action_pressed("ui_left") and current_level.next_level_left:

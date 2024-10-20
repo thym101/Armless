@@ -1,7 +1,7 @@
+AnimatedSprite2D
 Label
 Button
 TextureRect
-AnimatedSprite2D
 Panel
 VBoxContainer
 PathFollow2D

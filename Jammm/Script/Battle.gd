@@ -245,6 +245,13 @@ func handle_attack(attack_type: String):
 
 func handle_player_defeat():
 	Global.streak = 0
+	Global.hearth -= 1
+	if Global.hearth <= 0:
+		display_text("You Died!")
+		await get_tree().create_timer(3).timeout
+		close_textbox()
+		get_tree().change_scene_to_file("res://Scene/starting_menu.tscn")
+		
 	display_text("You have been defeated!")
 	await get_tree().create_timer(2).timeout
 	close_textbox()

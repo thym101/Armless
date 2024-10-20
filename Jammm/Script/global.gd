@@ -8,3 +8,4 @@ var sprite_path
 var frame_count
 var streak = 0
 var additionalPoint
+var hearth = 3
