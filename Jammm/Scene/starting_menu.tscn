@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://xm5n7h0tgum7"]
+[gd_scene load_steps=14 format=3 uid="uid://xm5n7h0tgum7"]
 
 [ext_resource type="Texture2D" uid="uid://62v240o0b332" path="res://pictures/menu_background.jpg" id="1_nl7hk"]
+[ext_resource type="Script" path="res://Script/starting_menu.gd" id="2_ssrvj"]
 [ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="2_xfavs"]
 [ext_resource type="Texture2D" uid="uid://b1wtnhpgfbd2v" path="res://witch_sheet.png" id="3_1ewoc"]
 
@@ -61,6 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_nl7hk")
 expand_mode = 2
+script = ExtResource("2_ssrvj")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -92,3 +94,6 @@ scale = Vector2(3.41, 3.345)
 sprite_frames = SubResource("SpriteFrames_ctrn5")
 autoplay = "default"
 frame_progress = 0.599854
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
