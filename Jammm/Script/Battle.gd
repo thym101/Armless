@@ -27,6 +27,7 @@ var enemy_stats
 var player_body_parts = {}
 var enemy_body_parts = {}
 
+
 func _ready():
 	player_stats = CharactorStat.get_stats()
 	enemy_stats = EnemyStats.get_stats()
@@ -244,6 +245,7 @@ func handle_player_defeat():
 	display_text("You have been defeated!")
 	await get_tree().create_timer(3).timeout
 	close_textbox()
+	
 	get_tree().change_scene_to_file("res://Scene/level_select.tscn")
 	# Add your game over logic here
 
