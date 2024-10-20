@@ -3,8 +3,8 @@ extends Control
 var player_stats = CharactorStat.get_stats()
 
 func _ready():
-	$Highest.text = str(Global.highest_target_name) + ": " + str(Global.highest_target_value)
-	$Second.text = str(Global.second_target_name) + ": " + str(Global.second_target_value)
+	$Control/Highest.text = str(Global.highest_target_name) + ": " + str(Global.highest_target_value)
+	$Control/Second.text = str(Global.second_target_name) + ": " + str(Global.second_target_value)
 	
 
 func _on_forgive_pressed():
