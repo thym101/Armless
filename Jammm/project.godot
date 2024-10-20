@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cougar"
-run/main_scene="res://Scene/background.tscn"
+run/main_scene="res://Scene/starting_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

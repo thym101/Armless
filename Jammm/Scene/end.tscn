@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdp31e35l3pxl"]
+
+[ext_resource type="Texture2D" uid="uid://dfpr836mlh1td" path="res://Asset/family.png" id="1_fkvbi"]
+[ext_resource type="Script" path="res://Script/end.gd" id="1_xmw40"]
+[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="3_4v3x4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqsge"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xmw40")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -208.0
+offset_right = 1152.0
+offset_bottom = 816.0
+texture = ExtResource("1_fkvbi")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 560.0
+offset_right = 1120.0
+offset_bottom = 608.0
+theme_override_fonts/font = ExtResource("3_4v3x4")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 32.0
+offset_right = 845.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4v3x4")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_lqsge")
+text = "Thank  You  For  Playing!"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

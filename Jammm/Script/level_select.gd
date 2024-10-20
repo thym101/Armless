@@ -53,4 +53,7 @@ func set_enemy_for_level():
 			EnemyStats.set_planetar_stats()
 		"9":
 			EnemyStats.set_goblin_stats()
+		"100":
+			EnemyStats.set_witch_stats()
+			
 			

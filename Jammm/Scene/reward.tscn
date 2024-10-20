@@ -1,11 +1,62 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhg1pq3snabo8"]
+[gd_scene load_steps=16 format=3 uid="uid://dhg1pq3snabo8"]
 
 [ext_resource type="Script" path="res://Script/reward.gd" id="1_efjr6"]
 [ext_resource type="Texture2D" uid="uid://blvfxrq6yaylc" path="res://pictures/ritual_actual_scene.png" id="2_smuhu"]
 [ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="3_pc04l"]
+[ext_resource type="Texture2D" uid="uid://bslndi2hxgdw1" path="res://Asset/Unnamed Character.png" id="4_2074e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rvg6"]
 bg_color = Color(0.345098, 0.282353, 0.345098, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oewd"]
+atlas = ExtResource("4_2074e")
+region = Rect2(288, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a62lj"]
+atlas = ExtResource("4_2074e")
+region = Rect2(304, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx0xb"]
+atlas = ExtResource("4_2074e")
+region = Rect2(320, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2immn"]
+atlas = ExtResource("4_2074e")
+region = Rect2(336, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcnbq"]
+atlas = ExtResource("4_2074e")
+region = Rect2(352, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klqdk"]
+atlas = ExtResource("4_2074e")
+region = Rect2(368, 33, 16, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_70uxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oewd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a62lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx0xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2immn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcnbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klqdk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_7vcdi"]
 length = 0.001
@@ -141,6 +192,18 @@ theme_override_fonts/font = ExtResource("3_pc04l")
 theme_override_font_sizes/font_size = 45
 text = "  KILL"
 
+[node name="Monster" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 208.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Monster"]
+texture_filter = 1
+position = Vector2(128, 96)
+scale = Vector2(10, 10)
+
 [node name="Control2" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 624.0
@@ -172,6 +235,33 @@ offset_bottom = 400.0
 theme_override_fonts/font = ExtResource("3_pc04l")
 theme_override_font_sizes/font_size = 45
 text = "FORGIVE"
+
+[node name="Human" type="Panel" parent="Control2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 328.0
+offset_bottom = 200.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control2/Human"]
+texture_filter = 1
+position = Vector2(136, 96)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_70uxl")
+autoplay = "default"
+frame_progress = 0.554013
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 240.0
+offset_right = 301.0
+offset_bottom = 277.0
+scale = Vector2(1.2, 1.2)
+theme_override_fonts/font = ExtResource("3_pc04l")
+text = "Turn  this  Monster 
+ back  to Human"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

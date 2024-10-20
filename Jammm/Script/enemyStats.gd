@@ -255,6 +255,17 @@ func set_goblin_stats():
 		"frame_count": 4
 	}
 
+func set_witch_stats():
+	enemy_stats = {
+		"name": "The  Witch",
+		"arm": 100,
+		"leg": 100,
+		"chest": 100,
+		"appendages": 100,
+		"sprite_path": "res://witch_flip_edit.png",
+		"frame_count": 4
+	}
+
 # Do the same for other set_*_stats functions...
 
 func get_stats():

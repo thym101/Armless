@@ -93,7 +93,7 @@ position = Vector2(792, 272)
 scale = Vector2(3.41, 3.345)
 sprite_frames = SubResource("SpriteFrames_ctrn5")
 autoplay = "default"
-frame_progress = 0.599854
+frame_progress = 0.0334764
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

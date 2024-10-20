@@ -1,13 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729413981
+::res://::1729420058
 4bd7d7b1-d42e-4896-99ae-44aed2a43e5a-removebg-preview.png::CompressedTexture2D::7830146921515060399::1729401726::1729401961::1::::<><>::
 icon.svg::CompressedTexture2D::5008424826326370759::1729370345::1729413342::1::::<><>::
+witch_flip.png::CompressedTexture2D::1126324384516482749::1729418955::1729419025::1::::<><>::
+witch_flip_edit.png::CompressedTexture2D::6605163835084852450::1729419137::1729419144::1::::<><>::
 witch_sheet.png::CompressedTexture2D::4257924158169439759::1729391619::1729391619::1::::<><>::
 ::res://arcadeclassic (1)/::1729370345
 ARCADECLASSIC.TTF::FontFile::8020601778404237756::1729370345::1729370345::1::::<><>::
 pizzadudedotdk.txt::TextFile::-1::1729370345::0::1::::<><>::
-::res://Asset/::1729382333
+::res://Asset/::1729420120
 Adam_idle_16x16.png::CompressedTexture2D::5791692714263928182::1729382327::1729382333::1::::<><>::
+family.png::CompressedTexture2D::7542264574759224729::1729420120::1729420121::1::::<><>::
+Unnamed Character.png::CompressedTexture2D::3673323165005564370::1729418095::1729418104::1::::<><>::
 ::res://Asset/node_2D/::1729370400
 icon_area_damage 2.png::CompressedTexture2D::6933962893913612185::1729370345::1729370399::1::::<><>::
 icon_area_damage.png::CompressedTexture2D::6390268397551722528::1729370345::1729370399::1::::<><>::
@@ -169,36 +173,37 @@ Screen Shot 2024-10-19 at 7.56.04 PM.png::CompressedTexture2D::87483810477989918
 Screen Shot 2024-10-19 at 10.50.44 PM.png::CompressedTexture2D::2537022460706716962::1729401726::1729401726::1::::<><>::
 ::res://redensek/::1729391619
 REDENSEK.TTF::FontFile::2211808946808074999::1729391619::1729391619::1::::<><>::
-::res://Scene/::1729413969
+::res://Scene/::1729419352
 Adam_16x16.png::CompressedTexture2D::2256546295937721546::1729401988::1729401989::1::::<><>::
-background.tscn::PackedScene::6893825038466269428::1729413922::0::1::::<><>::res://Script/Battle.gd<>uid://dwv1s7x7km051::::res://pictures/Screen Shot 2024-10-19 at 7.56.04 PM.png<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png
+background.tscn::PackedScene::6893825038466269428::1729419164::0::1::::<><>::res://Script/Battle.gd<>uid://dwv1s7x7km051::::res://pictures/Screen Shot 2024-10-19 at 7.56.04 PM.png<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png
 button.tscn::PackedScene::8290374179715814780::1729370345::0::1::::<><>::uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
-choosecharactor.tscn::PackedScene::5716688284767044725::1729413922::0::1::::<><>::res://Script/choosecharactor.gd<>uid://biar5xrtd7uvn::::res://pictures/forest_background.webp<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png<>uid://cm33a2n6dybr7::::res://Monster/Troll Đá - Stone Troll/Stone Troll/StoneTroll.png<>uid://dv030e8tls7lw::::res://Monster/Rồng Đồng - Bronze Dragon/Mature Bronze Dragon/MatureBronzeDragon.png<>uid://6rof10ysccs2::::res://redensek/REDENSEK.TTF
+choosecharactor.tscn::PackedScene::5716688284767044725::1729419164::0::1::::<><>::res://Script/choosecharactor.gd<>uid://biar5xrtd7uvn::::res://pictures/forest_background.webp<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png<>uid://cm33a2n6dybr7::::res://Monster/Troll Đá - Stone Troll/Stone Troll/StoneTroll.png<>uid://dv030e8tls7lw::::res://Monster/Rồng Đồng - Bronze Dragon/Mature Bronze Dragon/MatureBronzeDragon.png<>uid://6rof10ysccs2::::res://redensek/REDENSEK.TTF
 choosing_menu.tscn::PackedScene::3339597421722053263::1729391619::0::1::::<><>::uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
-level_icon.tscn::PackedScene::1408077443494428185::1729413922::0::1::::<><>::res://Script/level_icon.gd<>uid://cfd6gwq0qew2w::::res://pictures/dot.png
-level_select2.tscn::PackedScene::6517414753007827336::1729413969::0::1::::<><>::
-level_select.tscn::PackedScene::7432071133629276917::1729413922::0::1::::<><>::uid://bce7nh8v1353s::::res://pictures/Screen Shot 2024-10-19 at 10.50.44 PM.png<>res://Script/level_select.gd<>uid://ucc3hhl0naab::::res://Scene/level_icon.tscn<>uid://p0tt1xj8cpfx::::res://Scene/player_icon.tscn<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
+level_icon.tscn::PackedScene::1408077443494428185::1729419294::0::1::::<><>::res://Script/level_icon.gd<>uid://cfd6gwq0qew2w::::res://pictures/dot.png
+level_select.tscn::PackedScene::7432071133629276917::1729419165::0::1::::<><>::uid://bce7nh8v1353s::::res://pictures/Screen Shot 2024-10-19 at 10.50.44 PM.png<>res://Script/level_select.gd<>uid://ucc3hhl0naab::::res://Scene/level_icon.tscn<>uid://p0tt1xj8cpfx::::res://Scene/player_icon.tscn<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
 map.tscn::PackedScene::8992217247554423579::1729370407::0::1::::<><>::res://Script/Map_Generator.gd
-player_icon.tscn::PackedScene::1105631052959455357::1729413922::0::1::::<><>::uid://7xafiv7jou5f::::res://pictures/4bd7d7b1-d42e-4896-99ae-44aed2a43e5a-removebg-preview.png
-reward.tscn::PackedScene::7664576536253727633::1729413953::0::1::::<><>::res://Script/reward.gd<>uid://blvfxrq6yaylc::::res://pictures/ritual_actual_scene.png<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
-ritual_scene.tscn::PackedScene::7044779143419119705::1729413922::0::1::::<><>::uid://c86hytx6q8d84::::res://pictures/ritual_flip_scene.png<>res://Script/ritual_scene.gd
-starting_menu.tscn::PackedScene::1640962354549590600::1729413922::0::1::::<><>::uid://62v240o0b332::::res://pictures/menu_background.jpg<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://b1wtnhpgfbd2v::::res://witch_sheet.png
-stat_increase.tscn::PackedScene::5843821575781378883::1729413922::0::1::::<><>::res://Script/StatIncrease.gd
+player_icon.tscn::PackedScene::1105631052959455357::1729419165::0::1::::<><>::uid://7xafiv7jou5f::::res://pictures/4bd7d7b1-d42e-4896-99ae-44aed2a43e5a-removebg-preview.png
+end.tscn::PackedScene::2629699642083888421::1729419314::0::1::::<><>::
+reward.tscn::PackedScene::7664576536253727633::1729419352::0::1::::<><>::res://Script/reward.gd<>uid://blvfxrq6yaylc::::res://pictures/ritual_actual_scene.png<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bslndi2hxgdw1::::res://Asset/Unnamed Character.png
+ritual_scene.tscn::PackedScene::7044779143419119705::1729419165::0::1::::<><>::uid://c86hytx6q8d84::::res://pictures/ritual_flip_scene.png<>res://Script/ritual_scene.gd
+starting_menu.tscn::PackedScene::1640962354549590600::1729419165::0::1::::<><>::uid://62v240o0b332::::res://pictures/menu_background.jpg<>res://Script/starting_menu.gd<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://b1wtnhpgfbd2v::::res://witch_sheet.png
+stat_increase.tscn::PackedScene::5843821575781378883::1729419165::0::1::::<><>::res://Script/StatIncrease.gd
 world_icon.tscn::PackedScene::7271071102987004568::1729391901::0::1::::<><>::res://Script/world_icon.gd
 world_select.tscn::PackedScene::4877562337067290641::1729391901::0::1::::<><>::uid://dbufqjo1ctiaa::::res://Scene/world_icon.tscn<>res://Script/world_select.gd<>uid://dh7vvdf6jjbiy::::res://Scene/player_icon.tscn
-::res://Script/::1729413599
-BaseEnemy.gd::GDScript::-1::1729413599::0::1::::<>Resource<>::
-Battle.gd::GDScript::-1::1729413599::0::1::::<>Control<>::
-charactorStat.gd::GDScript::-1::1729404737::0::1::::<>Node<>::
+::res://Script/::1729419349
+BaseEnemy.gd::GDScript::-1::1729414121::0::1::::<>Resource<>::
+Battle.gd::GDScript::-1::1729419349::0::1::::<>Control<>::
+charactorStat.gd::GDScript::-1::1729418756::0::1::::<>Node<>::
 choosecharactor.gd::GDScript::-1::1729391619::0::1::::<>Control<>::
-enemyStats.gd::GDScript::-1::1729407778::0::1::::<>Node<>::
-global.gd::GDScript::-1::1729411326::0::1::::<>Node<>::
+enemyStats.gd::GDScript::-1::1729419159::0::1::::<>Node<>::
+global.gd::GDScript::-1::1729415213::0::1::::<>Node<>::
 health.gd::GDScript::-1::1729370345::0::1::::<>Node<>::
 level_data.gd::GDScript::-1::1729390005::0::1::::<>Node<>::
 level_icon.gd::GDScript::-1::1729390005::0::1::::LevelIcon<>Control<>::
-level_select.gd::GDScript::-1::1729403528::0::1::::LevelSelect<>Control<>::
+level_select.gd::GDScript::-1::1729418798::0::1::::LevelSelect<>Control<>::
 Map_Generator.gd::GDScript::-1::1729370345::0::1::::MapGenertor<>Node<>::
-reward.gd::GDScript::-1::1729412792::0::1::::<>Control<>::
+starting_menu.gd::GDScript::-1::1729414310::0::1::::<>Node<>::
+reward.gd::GDScript::-1::1729416488::0::1::::<>Control<>::
 ritual_scene.gd::GDScript::-1::1729413278::0::1::::<>CanvasLayer<>::
 room.gd::GDScript::-1::1729370345::0::1::::Room<>Resource<>::
 StatIncrease.gd::GDScript::-1::1729412621::0::1::::<>Control<>::

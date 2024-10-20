@@ -12,3 +12,8 @@ res://Scene/level_select.tscn
 res://Scene/player_icon.tscn
 res://Script/global.gd
 res://Script/reward.gd
+res://Script/charactorStat.gd
+res://Script/enemyStats.gd
+res://Script/level_select.gd
+res://Scene/end.tscn
+res://Script/end.gd

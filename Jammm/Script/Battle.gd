@@ -87,7 +87,7 @@ func _ready():
 	
 	# Check who goes first based on speed
 	if current_enemy_speed > curent_player_speed:
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(1.5).timeout
 		enemy_turn()
 	else:
 		$Action/action_button.visible = true
@@ -156,7 +156,7 @@ func calculate_damage(attacker_damage: int, defender_armor: int, body_part_point
 func calculate_dodge_chance(dodge_points: int, speed: int) -> float:
 	# Dodge % = Dodge points + (Speed / 10)
 	var dodge_chance = dodge_points + (speed / 10.0)
-	return min(dodge_chance / 100.0, 0.9)  # Cap at 90% dodge chance
+	return min(dodge_chance / 100.0, 0.6)  # Cap at 90% dodge chance
 
 func try_dodge(dodge_points: int, speed: int) -> bool:
 	var dodge_chance = calculate_dodge_chance(dodge_points, speed)
@@ -169,7 +169,7 @@ func enemy_turn():
 	
 	if try_dodge(curent_player_dodge, curent_player_speed):
 		display_text("Player dodged the attack!")
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1.5).timeout
 		close_textbox()
 		$Action/action_button.visible = true
 		return
@@ -188,7 +188,7 @@ func enemy_turn():
 	#await display_text("Enemy attacked your " + target_part + " for " + str(final_damage) + " damage!")
 	#close_textbox()
 	#
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1.5).timeout
 	close_textbox()
 	
 	if current_player_health <= 0:
@@ -203,11 +203,11 @@ func handle_attack(attack_type: String):
 	
 	if try_dodge(current_enemy_dodge, current_enemy_speed):
 		display_text("Enemy dodged the attack! (Dodge: " + str(current_enemy_dodge) + "%, Speed bonus: " + str(current_enemy_speed/10) + "%)")
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(1.5).timeout
 		close_textbox()
 		#await display_text("Enemy dodged the attack! (Dodge: " + str(current_enemy_dodge) + "%, Speed bonus: " + str(current_enemy_speed/10) + "%)")
 		#close_textbox()
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.5).timeout
 		enemy_turn()
 		return
 	
@@ -228,31 +228,37 @@ func handle_attack(attack_type: String):
 	#await display_text(attack_message + " for " + str(final_damage) + " damage!")
 	#close_textbox()
 	
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1.5).timeout
 	current_enemy_health = max(0, current_enemy_health - final_damage)
 	set_health($Monster/Panel/ProgressBar, current_enemy_health, max_enemy_health)
 	$AnimationPlayer.play("enemy_damage")
 	
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	close_textbox()
 	
 	if current_enemy_health <= 0:
 		handle_enemy_defeat()
 		return
 		
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	enemy_turn()
 
 func handle_player_defeat():
 	Global.streak = 0
 	display_text("You have been defeated!")
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	close_textbox()
 	
 	get_tree().change_scene_to_file("res://Scene/level_select.tscn")
 	# Add your game over logic here
 
 func handle_enemy_defeat():
+	if enemy_stats.name == "The Witch":
+		display_text("Victory!  YOU  WIN  THE  GAME!!!")
+		await get_tree().create_timer(2).timeout
+		close_textbox()
+		get_tree().change_scene_to_file("res://Scene/end.tscn")
+	
 	var targets = {
 		"arm": arm_tagget,
 		"leg": leg_tagget,
@@ -313,7 +319,7 @@ func handle_enemy_defeat():
 		Global.second_target_value = enemy_stats.appendages
 	
 	display_text("Victory! Enemy defeated!")
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	close_textbox()
 	get_tree().change_scene_to_file("res://Scene/reward.tscn")
 	# Add your victory logic here

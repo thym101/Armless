@@ -138,7 +138,7 @@ offset_left = 816.0
 offset_top = 512.0
 offset_right = 880.0
 offset_bottom = 576.0
-level_name = "Reward"
+level_name = "100"
 next_level_up = NodePath("../LevelIcon9")
 
 [node name="LevelIcon10" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("1_nq6hm")]
