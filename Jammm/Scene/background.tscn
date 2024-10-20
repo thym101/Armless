@@ -1,7 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://c5hoj5uwpo50k"]
 
 [ext_resource type="Script" path="res://Script/Battle.gd" id="1_0e6o8"]
-[ext_resource type="Resource" uid="uid://dlkedmdm12it8" path="res://src/enemy.tres" id="2_23i7j"]
 [ext_resource type="Texture2D" uid="uid://dwv1s7x7km051" path="res://pictures/Screen Shot 2024-10-19 at 7.56.04 PM.png" id="3_wylle"]
 [ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="5_5ekuj"]
 [ext_resource type="Texture2D" uid="uid://bbnj75233vgij" path="res://Monster/Hắc Lang - Black Wolf/TimberWolf.png" id="5_m3r2p"]
@@ -54,16 +53,12 @@ border_width_right = 3
 border_width_bottom = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8ql2"]
-bg_color = Color(0.752941, 0.756863, 0.745098, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+bg_color = Color(0.94902, 0, 0.192157, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
 expand_margin_left = 1.0
 expand_margin_top = 1.0
 expand_margin_right = 1.0
@@ -71,14 +66,10 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3el0"]
 bg_color = Color(0.247059, 0.709804, 0.266667, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_bottom = 1
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
 expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 

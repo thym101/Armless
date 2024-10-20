@@ -1,11 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729389951
+::res://::1729375862
 icon.svg::CompressedTexture2D::5008424826326370759::1729350301::1729350391::1::::<><>::
 witch_sheet.png::CompressedTexture2D::4257924158169439759::1729381452::1729381484::1::::<><>::
 ::res://arcadeclassic (1)/::1729350322
 ARCADECLASSIC.TTF::FontFile::8020601778404237756::1729350301::1729350301::1::::<><>::
 pizzadudedotdk.txt::TextFile::-1::1729350301::0::1::::<><>::
 ::res://Asset/::1729370858
+Adam_idle_16x16.png::CompressedTexture2D::-1::1729391877::1729391877::1::::<><>::
 ::res://Asset/node_2D/::1729370858
 icon_area_damage 2.png::CompressedTexture2D::3737148909766542625::1729370027::1729378264::1::::<><>::
 icon_area_damage.png::CompressedTexture2D::4179256831319141571::1729370074::1729378264::1::::<><>::
@@ -152,31 +153,42 @@ GrinningGremlin.png::CompressedTexture2D::8572876962493859735::1729350301::17293
 Stat-Yêu-Tinh-Trinh-Sát.txt::TextFile::-1::1729350301::0::1::::<><>::
 ::res://Monster/Yêu Tinh Trinh Sát - Goblin Wolf Rider/goblin wolf rider/::1729350322
 GoblinWolfRider.png::CompressedTexture2D::7451089178499362808::1729350301::1729350301::1::::<><>::
-::res://pictures/::1729388373
+::res://pictures/::1729399173
+4bd7d7b1-d42e-4896-99ae-44aed2a43e5a-removebg-preview.png::CompressedTexture2D::2293533067824164497::1729399173::1729399173::1::::<><>::
 background.webp::CompressedTexture2D::4682319940367716934::1729351988::1729381508::1::::<><>::
-d9spuwer2c491.webp::CompressedTexture2D::8962218946978122971::1729378263::1729381508::1::::<><>::
-dragon poke.png::CompressedTexture2D::4824699898725660524::1729350301::1729381508::1::::<><>::
+dot.png::CompressedTexture2D::5131872841765757508::1729397045::1729397045::1::::<><>::
 forest_background.webp::CompressedTexture2D::2949018430658828919::1729381487::1729381508::1::::<><>::
 menu_background.jpg::CompressedTexture2D::2232917187888987355::1729388359::1729388373::1::::<><>::
 Screen Shot 2024-10-19 at 7.56.04 PM.png::CompressedTexture2D::8748381047798991802::1729385855::1729385856::1::::<><>::
-Screen Shot 2024-10-19 at 8.32.31 PM.png::CompressedTexture2D::8031807740716928962::1729387958::1729388373::1::::<><>::
+Screen Shot 2024-10-19 at 10.50.44 PM.png::CompressedTexture2D::2537022460706716962::1729396249::1729396277::1::::<><>::
 ::res://redensek/::1729384096
 REDENSEK.TTF::FontFile::2211808946808074999::1729384096::1729384114::1::::<><>::
-::res://Scene/::1729389909
-background.tscn::PackedScene::6893825038466269428::1729389909::0::1::::<><>::res://Script/Battle.gd<>uid://dlkedmdm12it8::::res://src/enemy.tres<>uid://dwv1s7x7km051::::res://pictures/Screen Shot 2024-10-19 at 7.56.04 PM.png<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png
+::res://Scene/::1729375862
+background.tscn::PackedScene::6893825038466269428::1729398375::0::1::::<><>::res://Script/Battle.gd<>uid://dwv1s7x7km051::::res://pictures/Screen Shot 2024-10-19 at 7.56.04 PM.png<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png
 button.tscn::PackedScene::8290374179715814780::1729350301::0::1::::<><>::uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
-choosecharactor.tscn::PackedScene::5716688284767044725::1729389909::0::1::::<><>::res://Script/choosecharactor.gd<>uid://biar5xrtd7uvn::::res://pictures/forest_background.webp<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png<>uid://cm33a2n6dybr7::::res://Monster/Troll Đá - Stone Troll/Stone Troll/StoneTroll.png<>uid://dv030e8tls7lw::::res://Monster/Rồng Đồng - Bronze Dragon/Mature Bronze Dragon/MatureBronzeDragon.png<>uid://6rof10ysccs2::::res://redensek/REDENSEK.TTF
+choosecharactor.tscn::PackedScene::5716688284767044725::1729398375::0::1::::<><>::res://Script/choosecharactor.gd<>uid://biar5xrtd7uvn::::res://pictures/forest_background.webp<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://bbnj75233vgij::::res://Monster/Hắc Lang - Black Wolf/TimberWolf.png<>uid://cm33a2n6dybr7::::res://Monster/Troll Đá - Stone Troll/Stone Troll/StoneTroll.png<>uid://dv030e8tls7lw::::res://Monster/Rồng Đồng - Bronze Dragon/Mature Bronze Dragon/MatureBronzeDragon.png<>uid://6rof10ysccs2::::res://redensek/REDENSEK.TTF
 choosing_menu.tscn::PackedScene::3339597421722053263::1729379660::0::1::::<><>::uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF
+level_icon.tscn::PackedScene::1408077443494428185::1729398375::0::1::::<><>::res://Script/level_icon.gd<>uid://cfd6gwq0qew2w::::res://pictures/dot.png
+level_select.tscn::PackedScene::7432071133629276917::1729398751::0::1::::<><>::uid://bce7nh8v1353s::::res://pictures/Screen Shot 2024-10-19 at 10.50.44 PM.png<>res://Script/level_select.gd<>uid://ucc3hhl0naab::::res://Scene/level_icon.tscn<>res://Scene/player_icon.tscn
 map.tscn::PackedScene::8992217247554423579::1729371716::0::1::::<><>::res://Script/Map_Generator.gd
-starting_menu.tscn::PackedScene::1640962354549590600::1729389909::0::1::::<><>::uid://62v240o0b332::::res://pictures/menu_background.jpg<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://b1wtnhpgfbd2v::::res://witch_sheet.png
+player_icon.tscn::PackedScene::-1::1729391877::0::1::::<><>::
+starting_menu.tscn::PackedScene::1640962354549590600::1729398375::0::1::::<><>::uid://62v240o0b332::::res://pictures/menu_background.jpg<>uid://dmjie0htcxto3::::res://arcadeclassic (1)/ARCADECLASSIC.TTF<>uid://b1wtnhpgfbd2v::::res://witch_sheet.png
+world_icon.tscn::PackedScene::-1::1729391877::0::1::::<><>::
+world_select.tscn::PackedScene::-1::1729391877::0::1::::<><>::
 ::res://Script/::1729370083
-BaseEnemy.gd::GDScript::-1::1729383892::0::1::::<>Resource<>::
-Battle.gd::GDScript::-1::1729383892::0::1::::<>Control<>::
+BaseEnemy.gd::GDScript::-1::1729389978::0::1::::<>Resource<>::
+Battle.gd::GDScript::-1::1729396195::0::1::::<>Control<>::
 charactorStat.gd::GDScript::-1::1729386053::0::1::::<>Node<>::
-choosecharactor.gd::GDScript::-1::1729383959::0::1::::<>Control<>::
+choosecharactor.gd::GDScript::-1::1729391877::0::1::::<>Control<>::
+enemyStats.gd::GDScript::-1::1729391877::0::1::::<>Node<>::
 global.gd::GDScript::-1::1729378264::0::1::::<>Node<>::
 health.gd::GDScript::-1::1729360587::0::1::::<>Node<>::
+level_data.gd::GDScript::-1::1729391877::0::1::::<>Node<>::
+level_icon.gd::GDScript::-1::1729391877::0::1::::LevelIcon<>Control<>::
+level_select.gd::GDScript::-1::1729391877::0::1::::LevelSelect<>Control<>::
 Map_Generator.gd::GDScript::-1::1729370074::0::1::::MapGenertor<>Node<>::
 room.gd::GDScript::-1::1729350301::0::1::::Room<>Resource<>::
+world_icon.gd::GDScript::-1::1729391877::0::1::::<>Control<>::
+world_select.gd::GDScript::-1::1729391877::0::1::::<>Control<>::
 ::res://src/::1729350316
 enemy.tres::Resource::7952231969486693631::1729350301::0::1::::<><>::res://Script/BaseEnemy.gd<>uid://bboddogb8jy7s::::res://Monster/dragon poke.png

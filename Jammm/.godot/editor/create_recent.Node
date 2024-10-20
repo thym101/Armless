@@ -1,7 +1,10 @@
+PathFollow2D
+Path2D
 AnimatedSprite2D
-Button
-TextureRect
+Line2D
 Panel
+TextureRect
+Button
 Label
 Control
 AnimationPlayer
@@ -9,6 +12,3 @@ TextureButton
 Container
 BoxContainer
 Sprite2D
-VBoxContainer
-CollisionShape2D
-Line2D

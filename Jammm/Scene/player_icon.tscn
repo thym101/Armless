@@ -1,10 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh7vvdf6jjbiy"]
+[gd_scene load_steps=9 format=3 uid="uid://p0tt1xj8cpfx"]
 
-[ext_resource type="Texture2D" uid="uid://corslk0o0j6qc" path="res://Asset/Adam_idle_16x16.png" id="1_au5ev"]
+[ext_resource type="Texture2D" uid="uid://7xafiv7jou5f" path="res://pictures/4bd7d7b1-d42e-4896-99ae-44aed2a43e5a-removebg-preview.png" id="1_b1ioh"]
 
-[node name="PlayerIcon" type="TextureRect"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0gcw"]
+atlas = ExtResource("1_b1ioh")
+region = Rect2(288, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj0yf"]
+atlas = ExtResource("1_b1ioh")
+region = Rect2(304, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0i8m"]
+atlas = ExtResource("1_b1ioh")
+region = Rect2(320, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4120"]
+atlas = ExtResource("1_b1ioh")
+region = Rect2(336, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwa03"]
+atlas = ExtResource("1_b1ioh")
+region = Rect2(352, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46b16"]
+atlas = ExtResource("1_b1ioh")
+region = Rect2(368, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2u8gf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0gcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj0yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0i8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4120")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwa03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46b16")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlayerIcon" type="AnimatedSprite2D"]
 texture_filter = 1
-offset_right = 64.0
-offset_bottom = 64.0
-pivot_offset = Vector2(32, 32)
-texture = ExtResource("1_au5ev")
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_2u8gf")
+autoplay = "default"
+frame_progress = 0.831751
