@@ -1,7 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://c5hoj5uwpo50k"]
 
 [ext_resource type="Script" path="res://Script/Battle.gd" id="1_0e6o8"]
-[ext_resource type="Resource" uid="uid://dlkedmdm12it8" path="res://src/enemy.tres" id="2_23i7j"]
 [ext_resource type="Texture2D" uid="uid://dwv1s7x7km051" path="res://pictures/Screen Shot 2024-10-19 at 7.56.04 PM.png" id="3_wylle"]
 [ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="5_5ekuj"]
 [ext_resource type="Texture2D" uid="uid://bbnj75233vgij" path="res://Monster/Hắc Lang - Black Wolf/TimberWolf.png" id="5_m3r2p"]

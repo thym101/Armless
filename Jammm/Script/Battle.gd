@@ -1,62 +1,106 @@
 extends Control
 
+#signal text_completed
+
 #@export var enemy: Resource = null
+var max_player_healh = 0
 var current_player_health = 0
 var curent_player_armor = 0
 var curent_player_speed = 0
 var curent_player_dodge = 0
 var curent_player_damage = 0
+var max_enemy_health = 0
 var current_enemy_health = 0
 var current_enemy_armor = 0
 var current_enemy_speed = 0
 var current_enemy_dodge = 0
 var current_enemy_damage = 0
 var is_enemy_attack = false
+var arm_tagget = 0
+var leg_tagget = 0
+var chest_tagget = 0
+var appendages_tagget = 0
 var player_stats
 var enemy_stats
+
+# Store body part stats for easy access
+var player_body_parts = {}
+var enemy_body_parts = {}
 
 func _ready():
 	player_stats = CharactorStat.get_stats()
 	enemy_stats = EnemyStats.get_stats()
-	#var p_name = player_stats.name
-	var p_arm = player_stats.arm
-	var p_leg = player_stats.leg
-	var p_chest = player_stats.chest
-	var p_appendages = player_stats.appendages
 	
-	var e_name = enemy_stats.name
-	var e_arm = enemy_stats.arm
-	var e_leg = enemy_stats.leg
-	var e_chest = enemy_stats.chest
-	var e_appendages = enemy_stats.appendages
+	arm_tagget = 0
+	leg_tagget = 0
+	chest_tagget = 0
+	appendages_tagget = 0
+	
+	# Store body part stats in dictionaries
+	player_body_parts = {
+		#"name": player_stats.name,
+		"arm": player_stats.arm,
+		"leg": player_stats.leg,
+		"chest": player_stats.chest,
+		"appendages": player_stats.appendages
+	}
+	
+	enemy_body_parts = {
+		#"name": enemy_stats.name,
+		"arm": enemy_stats.arm,
+		"leg": enemy_stats.leg,
+		"chest": enemy_stats.chest,
+		"appendages": enemy_stats.appendages
+	}
 	
 	setup_enemy_animation()
 	setup_idle_animation()
 
-	current_player_health = (p_arm + p_leg + p_chest + p_appendages) * 10
-	curent_player_armor = (p_chest * 2) + p_arm + p_leg + (p_appendages * 2)
-	curent_player_speed = (p_leg * 3) + (p_appendages * 2)
-	curent_player_dodge = (p_leg * 2) + p_arm
-	curent_player_damage = (p_arm * 3) + p_appendages
+	# Stats calculation
+	current_player_health = (player_stats.arm + player_stats.leg + player_stats.chest + player_stats.appendages) * 10
+	max_player_healh = current_player_health
+	curent_player_armor = (player_stats.chest * 2) + player_stats.arm + player_stats.leg + (player_stats.appendages * 2)
+	curent_player_speed = (player_stats.leg * 3) + (player_stats.appendages * 2)
+	curent_player_dodge = (player_stats.leg * 2) + player_stats.arm
+	curent_player_damage = (player_stats.arm * 3) + player_stats.appendages
 	
-	current_enemy_health = (e_arm + e_leg + e_chest + e_appendages) * 10
-	current_enemy_armor = (e_chest * 2) + e_arm + e_leg + (e_appendages * 2)
-	current_enemy_speed = (e_leg * 3) + (e_appendages * 2)
-	current_enemy_dodge = (e_leg * 2) + e_arm
-	current_enemy_damage = (e_arm * 3) + e_appendages
+	current_enemy_health = (enemy_stats.arm + enemy_stats.leg + enemy_stats.chest + enemy_stats.appendages) * 10
+	max_enemy_health = current_enemy_health
+	current_enemy_armor = (enemy_stats.chest * 2) + enemy_stats.arm + enemy_stats.leg + (enemy_stats.appendages * 2)
+	current_enemy_speed = (enemy_stats.leg * 3) + (enemy_stats.appendages * 2)
+	current_enemy_dodge = (enemy_stats.leg * 2) + enemy_stats.arm
+	current_enemy_damage = (enemy_stats.arm * 3) + enemy_stats.appendages
 	
-	set_health($Player/Panel2/ProgressBar, Health.current_health, Health.max_health)
-	set_health($Monster/Panel/ProgressBar, current_enemy_health, current_enemy_health)
-	#$Monster/Dragon/DragonPoke.texture = enemy.texture
-	#$Action.hide()
+	set_health($Player/Panel2/ProgressBar, current_player_health, max_player_healh)
+	set_health($Monster/Panel/ProgressBar, current_enemy_health, max_enemy_health)
+	
 	$Action/textbox.hide()
-	
-	#$Player/Panel2/Label.text = p_name
-	$Monster/Panel/Label.text = e_name
+	#$Action/textbox.gui_input.connect(_on_textbox_input)
+	$Player/Panel2/Label.text = player_stats.name
+	$Monster/Panel/Label.text = enemy_stats.name
 	
 	$Player/player.play("idle")
 	$Monster/monster.play("idle")
 	
+	# Check who goes first based on speed
+	if current_enemy_speed > curent_player_speed:
+		await get_tree().create_timer(0.5).timeout
+		enemy_turn()
+	else:
+		$Action/action_button.visible = true
+
+func set_health(progress_bar: ProgressBar, current: int, maximum: int):
+	progress_bar.max_value = maximum
+	progress_bar.value = current
+	
+	var health_percent = float(current) / maximum
+	if health_percent > 0.7:
+		progress_bar.modulate = Color(0, 1, 0)  # Green
+	elif health_percent > 0.3:
+		progress_bar.modulate = Color(1, 1, 0)  # Yellow
+	else:
+		progress_bar.modulate = Color(1, 0, 0)  # Red
+		
 func setup_enemy_animation():
 	var sprite_frames = SpriteFrames.new()
 	var texture = load(enemy_stats.sprite_path)
@@ -95,179 +139,204 @@ func setup_idle_animation():
 	
 	# Apply the frames to the AnimatedSprite2D
 	$Player/player.sprite_frames = sprite_frames
-
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-func player_attack(damage):
-	var effective_damage = max(0, damage - current_enemy_armor)
-	current_enemy_health = max(0, current_enemy_health - effective_damage)
-	set_health($Monster/Panel/ProgressBar, current_enemy_health, current_enemy_health)
-	$AnimationPlayer.play("enemy_damage")
 	
-	if current_enemy_health <= 0:
-		display_text("Enemy defeated!")
-	else:
-		enemy_turn()
 
-# Handle enemy attack on player
-func enemy_attack():
-	# Check if the player dodges the attack
-	if randf() * 100 < curent_player_dodge:
-		display_text("Player dodges the attack!")
+func calculate_damage(attacker_damage: int, defender_armor: int, body_part_points: int) -> int:
+	# Calculate damage reduction from armor
+	var actual_damage = attacker_damage / (1 + (defender_armor / 100.0))
+	
+	# Calculate final damage based on body part points
+	var final_damage = (actual_damage / (body_part_points / 5.0)) * 5
+	
+	return int(max(1, final_damage))  # Ensure minimum damage of 1
+
+func calculate_dodge_chance(dodge_points: int, speed: int) -> float:
+	# Dodge % = Dodge points + (Speed / 10)
+	var dodge_chance = dodge_points + (speed / 10.0)
+	return min(dodge_chance / 100.0, 0.9)  # Cap at 90% dodge chance
+
+func try_dodge(dodge_points: int, speed: int) -> bool:
+	var dodge_chance = calculate_dodge_chance(dodge_points, speed)
+	return randf() < dodge_chance
+
+func enemy_turn():
+	# Random target selection for enemy
+	var target_parts = ["arm", "leg", "chest", "appendages"]
+	var target_part = target_parts[randi() % target_parts.size()]
+	
+	if try_dodge(curent_player_dodge, curent_player_speed):
+		display_text("Player dodged the attack!")
+		await get_tree().create_timer(1).timeout
+		close_textbox()
+		$Action/action_button.visible = true
 		return
 	
-	var effective_damage = max(0, current_enemy_damage - curent_player_armor)
-	current_player_health = max(0, current_player_health - effective_damage)
-	set_health($Player/Panel2/ProgressBar, current_player_health, current_player_health)
+	var final_damage = calculate_damage(
+		current_enemy_damage,
+		curent_player_armor,
+		player_body_parts[target_part]
+	)
+	
+	current_player_health = max(0, current_player_health - final_damage)
+	set_health($Player/Panel2/ProgressBar, current_player_health, max_player_healh)
 	
 	$AnimationPlayer.play("player_damaged")
+	display_text("Enemy attacked your " + target_part + " for " + str(final_damage) + " damage!")
+	#await display_text("Enemy attacked your " + target_part + " for " + str(final_damage) + " damage!")
+	#close_textbox()
+	#
+	await get_tree().create_timer(3).timeout
+	close_textbox()
 	
 	if current_player_health <= 0:
-		display_text("Player defeated!")
-	else:
-		$Action/action_button.visible = true
+		handle_player_defeat()
+		return
+		
+	await get_tree().create_timer(0.2).timeout
+	$Action/action_button.visible = true
 
-# Arm attack
-func _on_arm_pressed():
+func handle_attack(attack_type: String):
 	$Action/action_button.visible = false
-	display_text("Attacking enemy's arm")
-	await get_tree().create_timer(0.7).timeout
-	player_attack(curent_player_damage)
-
-# Leg attack
-func _on_leg_pressed():
-	$Action/action_button.visible = false
-	display_text("Attacking enemy's leg")
-	await get_tree().create_timer(0.7).timeout
-	player_attack(curent_player_damage)
-
-# Chest attack
-func _on_chest_pressed():
-	$Action/action_button.visible = false
-	display_text("Attacking enemy's chest")
-	await get_tree().create_timer(0.7).timeout
-	player_attack(curent_player_damage)
-
-# Appendages attack
-func _on_appendages_pressed():
-	$Action/action_button.visible = false
-	display_text("Attacking enemy's appendages")
-	await get_tree().create_timer(0.7).timeout
-	player_attack(curent_player_damage)
-
-# Called each time the enemy takes a turn
-func enemy_turn():
+	
+	if try_dodge(current_enemy_dodge, current_enemy_speed):
+		display_text("Enemy dodged the attack! (Dodge: " + str(current_enemy_dodge) + "%, Speed bonus: " + str(current_enemy_speed/10) + "%)")
+		await get_tree().create_timer(3).timeout
+		close_textbox()
+		#await display_text("Enemy dodged the attack! (Dodge: " + str(current_enemy_dodge) + "%, Speed bonus: " + str(current_enemy_speed/10) + "%)")
+		#close_textbox()
+		await get_tree().create_timer(0.2).timeout
+		enemy_turn()
+		return
+	
+	var final_damage = calculate_damage(
+		curent_player_damage,
+		current_enemy_armor,
+		enemy_body_parts[attack_type]
+	)
+	
+	var attack_message = ""
+	match attack_type:
+		"arm": attack_message = "Slashed the arm"
+		"leg": attack_message = "Cut the leg"
+		"chest": attack_message = "Struck the chest"
+		"appendages": attack_message = "Hit the wings"
+	
+	display_text(attack_message + " for " + str(final_damage) + " damage!")
+	#await display_text(attack_message + " for " + str(final_damage) + " damage!")
+	#close_textbox()
+	
+	await get_tree().create_timer(2).timeout
+	current_enemy_health = max(0, current_enemy_health - final_damage)
+	set_health($Monster/Panel/ProgressBar, current_enemy_health, max_enemy_health)
+	$AnimationPlayer.play("enemy_damage")
+	
+	await get_tree().create_timer(3).timeout
+	close_textbox()
+	
+	if current_enemy_health <= 0:
+		handle_enemy_defeat()
+		return
+		
 	await get_tree().create_timer(1).timeout
-	enemy_attack()
+	enemy_turn()
 
-# Update health bar UI
-func set_health(progress_bar, health, max_health):
-	progress_bar.value = health
-	progress_bar.max_value = max_health
+func handle_player_defeat():
+	display_text("You have been defeated!")
+	await get_tree().create_timer(3).timeout
+	close_textbox()
+	get_tree().change_scene_to_file("res://Scene/level_select.tscn")
+	# Add your game over logic here
 
-# Display text in the action box
-func display_text(text):
-	$Action/textbox.show()
-	$Action/textbox.text = text
+func handle_enemy_defeat():
+	var targets = {
+		"arm": arm_tagget,
+		"leg": leg_tagget,
+		"chest": chest_tagget,
+		"appendages": appendages_tagget
+	}
+	
+	var highest = {"name": "", "value": -1}
+	var second = {"name": "", "value": -1}
+	
+	# Find highest
+	for target_name in targets:
+		if targets[target_name] > highest.value:
+			# Move current highest to second
+			second.name = highest.name
+			second.value = highest.value
+			# Set new highest
+			highest.name = target_name
+			highest.value = targets[target_name]
+		elif targets[target_name] > second.value:
+			# Update second highest
+			second.name = target_name
+			second.value = targets[target_name]
+	
+	print("%s target is the highest and %s target is the second" % [highest.name, second.name])
+	
+	if highest.name == "arm":
+		Global.highest_target_name = highest.name
+		Global.highest_target_value = highest.value
+		Global.sprite_path = enemy_stats.sprite_path
+		Global.frame_count = enemy_stats.frame_count
+	if highest.name == "leg":
+		Global.highest_target_name = highest.name
+		Global.highest_target_value = highest.value
+		Global.sprite_path = enemy_stats.sprite_path
+		Global.frame_count = enemy_stats.frame_count
+	if highest.name == "chest":
+		Global.highest_target_name = highest.name
+		Global.highest_target_value = highest.value
+		Global.sprite_path = enemy_stats.sprite_path
+		Global.frame_count = enemy_stats.frame_count
+	if highest.name == "appendages":
+		Global.highest_target_name = highest.name
+		Global.highest_target_value = highest.value
+		Global.sprite_path = enemy_stats.sprite_path
+		Global.frame_count = enemy_stats.frame_count
+	if second.name == "arm":
+		Global.second_target_name = second.name
+		Global.second_target_value = second.value
+	if second.name == "leg":
+		Global.second_target_name = second.name
+		Global.second_target_value = second.value
+	if second.name == "chest":
+		Global.second_target_name = second.name
+		Global.second_target_value = second.value
+	if second.name == "appendages":
+		Global.second_target_name = second.name
+		Global.second_target_value = second.value
+	
+	display_text("Victory! Enemy defeated!")
+	await get_tree().create_timer(3).timeout
+	close_textbox()
+	get_tree().change_scene_to_file("res://Scene/reward.tscn")
+	# Add your victory logic here
+
+func _on_arm_pressed():
+	arm_tagget += 1
+	handle_attack("arm")
+
+func _on_leg_pressed():
+	leg_tagget += 1
+	handle_attack("leg")
+
+func _on_chest_pressed():
+	chest_tagget += 1
+	handle_attack("chest")
+
+func _on_appendages_pressed():
+	appendages_tagget += 1
+	handle_attack("appendages")
 
 func close_textbox():
 	$Action/textbox.visible = false
 
-
-#func _process(delta):
-	#pass
-#
-#func display_text(text):
+#func display_text(text: String):
 	#$Action/textbox.show()
 	#$Action/textbox.text = text
-	#
-#func set_health(progress_bar, health, max_health):
-	#progress_bar.value = health
-	#progress_bar.max_value = max_health
-##
-#func enemy_turn():
-	#current_player_health = max(0, current_player_health - current_enemy_damage)
-	#set_health($Player/Panel2/ProgressBar, current_player_health, Health.max_health)
-	#
-	#$AnimationPlayer.play("player_damaged")
-	#display_text("Player attacked")
-	#
-	#await get_tree().create_timer(1).timeout
-	#close_textbox()
-	#
-	#await get_tree().create_timer(0.2).timeout
-	#$Action/action_button.visible = true
-	#
-#func _on_arm_pressed():
-	#$Action/action_button.visible = false
-	#
-	#display_text("Give it a nice hand cut")
-	#
-	#await get_tree().create_timer(0.7).timeout
-	#current_enemy_health = max(0, current_enemy_health - Health.damage)
-	#set_health($Monster/Panel/ProgressBar, current_enemy_health, current_enemy_health)
-	#$AnimationPlayer.play("enemy_damage")
-	#
-	##wait for 1 second and then close textbox
-	#await get_tree().create_timer(1).timeout
-	#close_textbox()
-	#
-	#await get_tree().create_timer(1).timeout
-	#enemy_turn()
-#
-#func _on_leg_pressed():
-	#$Action/action_button.visible = false
-	#
-	#display_text("Leg has a cut")
-	#
-	#await get_tree().create_timer(0.7).timeout
-	#current_enemy_health = max(0, current_enemy_health - Health.damage)
-	#set_health($Monster/Panel/ProgressBar, current_enemy_health, current_enemy_health)
-	#$AnimationPlayer.play("enemy_damage")
-#
-	#await get_tree().create_timer(1).timeout
-	#close_textbox()
-	#
-	#await get_tree().create_timer(1).timeout
-	#enemy_turn()
-	#
-	#
-#func _on_chest_pressed():
-	#$Action/action_button.visible = false
-	#
-	##display text
-	#display_text("Chest cut")
-	#
-	##health bar decreasing
-	#await get_tree().create_timer(0.7).timeout
-	#current_enemy_health = max(0, current_enemy_health - Health.damage)
-	#set_health($Monster/Panel/ProgressBar, current_enemy_health, current_enemy_health)
-	#
-	##animation while being attacked
-	#$AnimationPlayer.play("enemy_damage")
-#
-	#await get_tree().create_timer(1).timeout
-	#close_textbox()
-	#
-	#await get_tree().create_timer(1).timeout
-	#enemy_turn()
-	#
-#
-#func _on_appendages_pressed():
-	#$Action/action_button.visible = false
-	#
-	#display_text("No more wing")
-	#
-	#await get_tree().create_timer(0.7).timeout
-	#current_enemy_health = max(0, current_enemy_health - Health.damage)
-	#set_health($Monster/Panel/ProgressBar, current_enemy_health, current_enemy_health)
-	#$AnimationPlayer.play("enemy_damage")
-	#
-	#await get_tree().create_timer(1).timeout
-	#close_textbox()
-	#
-	#await get_tree().create_timer(1).timeout
-	#enemy_turn()
-	#
-#func close_textbox():
-	#$Action/textbox.visible = false
+
+func display_text(text: String):
+	$Action/textbox.show()
+	$Action/textbox.text = text
 

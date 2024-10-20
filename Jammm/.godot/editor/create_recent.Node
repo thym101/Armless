@@ -1,14 +1,14 @@
-AnimatedSprite2D
+Label
 Button
+VBoxContainer
+AnimatedSprite2D
 TextureRect
 Panel
-Label
 Control
 AnimationPlayer
 TextureButton
 Container
 BoxContainer
 Sprite2D
-VBoxContainer
 CollisionShape2D
 Line2D

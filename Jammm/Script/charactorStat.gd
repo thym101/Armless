@@ -2,6 +2,7 @@ extends Node
 
 # Bổ sung thêm các chỉ số tay (arm), chân (leg), ngực (chest), và bộ phận tùy chọn (appendages)
 var character_stats = {
+	"name": "",
 	"arm": 0,
 	"leg": 0,
 	"chest": 0,
@@ -13,6 +14,7 @@ var character_stats = {
 # Đặt chỉ số cho chiến binh
 func set_speed_stats():
 	character_stats = {
+		"name": "Fenrir",
 		"arm": 6,       # Sức mạnh tay
 		"leg": 7,       # Tốc độ chân
 		"chest": 6,    # Phòng thủ ngực
@@ -24,6 +26,7 @@ func set_speed_stats():
 # Đặt chỉ số cho sát thủ (rogue)
 func set_attack_stats():
 	character_stats = {
+		"name": "Bolg",
 		"arm": 8,       # Sức mạnh tay
 		"leg": 6,      # Tốc độ chân
 		"chest": 5,     # Phòng thủ ngực
@@ -35,6 +38,7 @@ func set_attack_stats():
 # Đặt chỉ số cho pháp sư (mage)
 func set_health_stats():
 	character_stats = {
+		"name": "Placidusax",
 		"arm": 7,      # Sức mạnh tay
 		"leg": 6,       # Tốc độ chân
 		"chest": 8,     # Phòng thủ ngực

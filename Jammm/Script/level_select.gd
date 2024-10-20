@@ -39,3 +39,16 @@ func set_enemy_for_level():
 			EnemyStats.set_cyclops_stats()
 		"3":
 			EnemyStats.set_dragon_stats()
+		"4":
+			EnemyStats.set_cat_stats()
+		"5":
+			EnemyStats.set_wyrm_stats()
+		"6":
+			EnemyStats.set_gremlin_stats()
+		"7":
+			EnemyStats.set_serpant_stats()
+		"8":
+			EnemyStats.set_planetar_stats()
+		"9":
+			EnemyStats.set_goblin_stats()
+			
