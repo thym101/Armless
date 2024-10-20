@@ -1,131 +1,187 @@
-[gd_scene load_steps=4 format=3 uid="uid://yijyqe082wwe"]
+[gd_scene load_steps=7 format=3 uid="uid://dd5fejl010qdh"]
 
+[ext_resource type="Texture2D" uid="uid://bce7nh8v1353s" path="res://pictures/Screen Shot 2024-10-19 at 10.50.44 PM.png" id="1_3krgx"]
 [ext_resource type="Script" path="res://Script/level_select.gd" id="1_fafk7"]
-[ext_resource type="PackedScene" uid="uid://vt6dqc4xkp20" path="res://Scene/level_icon.tscn" id="1_nq6hm"]
-[ext_resource type="PackedScene" uid="uid://dh7vvdf6jjbiy" path="res://Scene/player_icon.tscn" id="3_tkoou"]
+[ext_resource type="PackedScene" uid="uid://ucc3hhl0naab" path="res://Scene/level_icon.tscn" id="1_nq6hm"]
+[ext_resource type="PackedScene" uid="uid://p0tt1xj8cpfx" path="res://Scene/player_icon.tscn" id="3_tkoou"]
 
-[node name="LevelSelect" type="Control"]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_and2o"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.560784)
+
+[sub_resource type="Curve2D" id="Curve2D_2dl6d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 114, 564, 0, 0, 0, 0, 112, 416, 0, 0, 0, 0, 150, 416, 0, 0, 0, 0, 352, 416, 0, 0, 0, 0, 352, 370, 0, 0, 0, 0, 310, 370, 0, 0, 0, 0, 310, 250, 0, 0, 0, 0, 232, 250, 0, 0, 0, 0, 230, 144, 0, 0, 0, 0, 308, 144, 0, 0, 0, 0, 308, 100, 0, 0, 0, 0, 308, 144, 0, 0, 0, 0, 230, 144, 0, 0, 0, 0, 230, 248, 0, 0, 0, 0, 310, 250, 0, 0, 0, 0, 310, 370, 0, 0, 0, 0, 352, 370, 0, 0, 0, 0, 352, 416, 0, 0, 0, 0, 480, 416, 0, 0, 0, 0, 600, 416, 0, 0, 0, 0, 600, 284, 0, 0, 0, 0, 600, 418, 0, 0, 0, 0, 730, 418, 0, 0, 0, 0, 848, 418, 0, 0, 0, 0, 848, 552, 0, 0, 0, 0, 848, 418, 0, 0, 0, 0, 1026, 418, 0, 0, 0, 0, 1026, 252, 0, 0, 0, 0, 1026, 418, 0, 0, 0, 0, 848, 418, 0, 0, 0, 0, 730, 418, 0, 0, 0, 0, 600, 418, 0, 0, 0, 0, 480, 416, 0, 0, 0, 0, 352, 416, 0, 0, 0, 0, 150, 414, 0, 0, 0, 0, 112, 418, 0, 0, 0, 0, 114, 564)
+}
+point_count = 37
+
+[node name="LevelSelect" type="TextureRect"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_3krgx")
+expand_mode = 1
+flip_h = true
 script = ExtResource("1_fafk7")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_and2o")
+
+[node name="Line2D3" type="Line2D" parent="Panel"]
+points = PackedVector2Array(114, 544, 114, 416, 136, 416)
+width = 7.0
+
+[node name="Line2D" type="Line2D" parent="Panel"]
+points = PackedVector2Array(172, 416, 332, 416)
+width = 7.0
+
+[node name="Line2D2" type="Line2D" parent="Panel"]
+points = PackedVector2Array(352, 396, 352, 370, 310, 370, 310, 268)
+width = 7.0
+
+[node name="Line2D4" type="Line2D" parent="Panel"]
+points = PackedVector2Array(290, 250, 230, 250, 230, 144, 308, 144, 308, 118)
+width = 7.0
+
+[node name="Line2D5" type="Line2D" parent="Panel"]
+points = PackedVector2Array(370, 416, 462, 416)
+width = 7.0
+
+[node name="Line2D6" type="Line2D" parent="Panel"]
+points = PackedVector2Array(498, 416, 580, 416, 600, 420, 600, 304, 600, 418, 708, 418, 830, 418, 848, 418, 862, 418, 998, 418, 1026, 418, 1026, 270)
+width = 7.0
+
+[node name="Line2D7" type="Line2D" parent="Panel"]
+points = PackedVector2Array(848, 438, 848, 528)
+width = 7.0
+
 [node name="LevelIcon" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("1_nq6hm")]
-offset_left = 128.0
-offset_top = 512.0
-offset_right = 192.0
-offset_bottom = 576.0
-level_name = "Home"
+offset_left = 82.0
+offset_top = 528.0
+offset_right = 146.0
+offset_bottom = 592.0
 next_level_up = NodePath("../LevelIcon2")
 
 [node name="LevelIcon2" parent="." node_paths=PackedStringArray("next_level_down", "next_level_right") instance=ExtResource("1_nq6hm")]
-offset_left = 128.0
-offset_top = 384.0
-offset_right = 192.0
-offset_bottom = 448.0
+offset_top = 380.0
+offset_bottom = 444.0
 next_level_down = NodePath("../LevelIcon")
 next_level_right = NodePath("../LevelIcon3")
 
 [node name="LevelIcon3" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
-offset_left = 256.0
-offset_top = 384.0
-offset_right = 320.0
-offset_bottom = 448.0
+offset_left = 320.0
+offset_top = 380.0
+offset_right = 384.0
+offset_bottom = 444.0
 level_name = "2"
 next_level_up = NodePath("../LevelIcon4")
 next_level_left = NodePath("../LevelIcon2")
 next_level_right = NodePath("../LevelIcon13")
 
 [node name="LevelIcon13" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
-offset_left = 384.0
-offset_top = 384.0
-offset_right = 448.0
-offset_bottom = 448.0
+offset_left = 448.0
+offset_top = 380.0
+offset_right = 512.0
+offset_bottom = 444.0
 level_name = "3"
 next_level_left = NodePath("../LevelIcon3")
 next_level_right = NodePath("../LevelIcon6")
 
 [node name="LevelIcon6" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
-offset_left = 512.0
-offset_top = 384.0
-offset_right = 576.0
-offset_bottom = 448.0
+offset_left = 568.0
+offset_top = 380.0
+offset_right = 632.0
+offset_bottom = 444.0
 level_name = "5"
 next_level_up = NodePath("../LevelIcon8")
 next_level_left = NodePath("../LevelIcon13")
 next_level_right = NodePath("../LevelIcon7")
 
 [node name="LevelIcon7" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
-offset_left = 640.0
-offset_top = 384.0
-offset_right = 704.0
-offset_bottom = 448.0
+offset_left = 698.0
+offset_top = 382.0
+offset_right = 762.0
+offset_bottom = 446.0
 level_name = "6"
 next_level_left = NodePath("../LevelIcon6")
 next_level_right = NodePath("../LevelIcon9")
 
 [node name="LevelIcon8" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("1_nq6hm")]
-offset_left = 512.0
-offset_top = 256.0
-offset_right = 576.0
-offset_bottom = 320.0
-level_name = "Shop"
+offset_left = 568.0
+offset_top = 248.0
+offset_right = 632.0
+offset_bottom = 312.0
+level_name = "7"
 next_level_down = NodePath("../LevelIcon6")
 
 [node name="LevelIcon9" parent="." node_paths=PackedStringArray("next_level_down", "next_level_left", "next_level_right") instance=ExtResource("1_nq6hm")]
-offset_left = 768.0
-offset_top = 384.0
-offset_right = 832.0
-offset_bottom = 448.0
-level_name = "7"
+offset_left = 816.0
+offset_top = 382.0
+offset_right = 880.0
+offset_bottom = 446.0
+level_name = "8"
 next_level_down = NodePath("../LevelIcon14")
 next_level_left = NodePath("../LevelIcon7")
 next_level_right = NodePath("../LevelIcon10")
 
 [node name="LevelIcon14" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("1_nq6hm")]
-offset_left = 768.0
+offset_left = 816.0
 offset_top = 512.0
-offset_right = 832.0
+offset_right = 880.0
 offset_bottom = 576.0
 level_name = "Reward"
 next_level_up = NodePath("../LevelIcon9")
 
 [node name="LevelIcon10" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("1_nq6hm")]
-offset_left = 896.0
-offset_top = 384.0
-offset_right = 960.0
-offset_bottom = 448.0
-level_name = "8"
+offset_left = 994.0
+offset_top = 382.0
+offset_right = 1058.0
+offset_bottom = 446.0
+level_name = "9"
 next_level_up = NodePath("../LevelIcon12")
 next_level_left = NodePath("../LevelIcon9")
 
 [node name="LevelIcon12" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("1_nq6hm")]
-offset_left = 896.0
-offset_top = 256.0
-offset_right = 960.0
-offset_bottom = 320.0
-level_name = "9"
+offset_left = 994.0
+offset_top = 216.0
+offset_right = 1058.0
+offset_bottom = 280.0
+level_name = "10"
 next_level_down = NodePath("../LevelIcon10")
 
 [node name="LevelIcon4" parent="." node_paths=PackedStringArray("next_level_up", "next_level_down") instance=ExtResource("1_nq6hm")]
-offset_left = 256.0
-offset_top = 256.0
-offset_right = 320.0
-offset_bottom = 320.0
+offset_left = 278.0
+offset_top = 214.0
+offset_right = 340.0
+offset_bottom = 284.0
 level_name = "4"
 next_level_up = NodePath("../LevelIcon5")
 next_level_down = NodePath("../LevelIcon3")
 
 [node name="LevelIcon5" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("1_nq6hm")]
-offset_left = 256.0
-offset_top = 128.0
-offset_right = 320.0
-offset_bottom = 192.0
-level_name = "Reward"
+offset_left = 276.0
+offset_top = 62.0
+offset_right = 340.0
+offset_bottom = 126.0
 next_level_down = NodePath("../LevelIcon4")
 
-[node name="PlayerIcon" parent="." instance=ExtResource("3_tkoou")]
-layout_mode = 0
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2dl6d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(114, 564)
+rotation = -1.58431
+
+[node name="PlayerIcon" parent="Path2D/PathFollow2D" instance=ExtResource("3_tkoou")]
+position = Vector2(7.99927, 0.108116)
+rotation = 1.58431
+scale = Vector2(2, 1.98438)
+frame_progress = 0.981799

@@ -2,13 +2,10 @@ res://Scene/background.tscn
 res://Script/BaseEnemy.gd
 res://Script/Battle.gd
 res://Scene/choosecharactor.tscn
-res://Scene/world_select.tscn
-res://Scene/world_icon.tscn
+res://Scene/background.tscn
 res://Scene/level_select.tscn
 res://Scene/level_icon.tscn
-res://Scene/starting_menu.tscn
-res://Script/charactorStat.gd
+res://Scene/player_icon.tscn
 res://Script/level_select.gd
-res://Scene/reward.tscn
-res://Script/global.gd
-res://Script/reward.gd
+res://Scene/Path2D.gd
+res://Scene/player_icon.gd
