@@ -1,6 +1,77 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpi15gawrs3dn"]
+[gd_scene load_steps=20 format=3 uid="uid://cpi15gawrs3dn"]
 
 [ext_resource type="Script" path="res://Script/StatIncrease.gd" id="1_fyyhh"]
+[ext_resource type="Texture2D" uid="uid://di75icwooggpu" path="res://pictures/increase_background.jpg" id="2_sk32o"]
+[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="3_jlee4"]
+[ext_resource type="Texture2D" uid="uid://c21adigy8ab4w" path="res://pictures/Sprite-0002.png" id="4_o5f72"]
+[ext_resource type="Texture2D" uid="uid://chcjhhb5x81v0" path="res://pictures/Sprite-0003.png" id="5_y3ot1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yuyyh"]
+bg_color = Color(0.941176, 0.909804, 0.898039, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.317647, 0.403922, 0.819608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odslt"]
+bg_color = Color(0.380392, 0.443137, 0.803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mwv7"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxo4l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7qg1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjcgj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52sbs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp54b"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urk4q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yb8mi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2thc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0pep"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuceu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkeyl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="StatIncrease" type="Control"]
 layout_mode = 3
@@ -11,120 +82,291 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fyyhh")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = -148.0
+offset_right = 6.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sk32o")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 668.0
+offset_top = 34.0
+offset_right = 1034.0
+offset_bottom = 500.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yuyyh")
+
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 200.0
-offset_right = 122.0
-offset_bottom = 231.0
+offset_left = 758.0
+offset_top = 404.0
+offset_right = 958.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jlee4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_odslt")
 text = "Quit"
 
-[node name="Arm_Left" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "<"
-
-[node name="Arm_Right" type="Button" parent="."]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 2.0
-offset_right = 210.0
-offset_bottom = 33.0
-text = ">"
-
-[node name="Leg_Left" type="Button" parent="."]
-layout_mode = 0
-offset_top = 48.0
-offset_right = 18.0
-offset_bottom = 79.0
-text = "<"
-
-[node name="Leg_Right" type="Button" parent="."]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 48.0
-offset_right = 210.0
-offset_bottom = 79.0
-text = ">"
-
-[node name="Chest_Left" type="Button" parent="."]
-layout_mode = 0
-offset_top = 96.0
-offset_right = 18.0
-offset_bottom = 127.0
-text = "<"
-
-[node name="Chest_Right" type="Button" parent="."]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 96.0
-offset_right = 210.0
-offset_bottom = 127.0
-text = ">"
-
-[node name="Appendages_Left" type="Button" parent="."]
-layout_mode = 0
-offset_top = 144.0
-offset_right = 18.0
-offset_bottom = 175.0
-text = "<"
-
-[node name="Appendages_Right" type="Button" parent="."]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 144.0
-offset_right = 210.0
-offset_bottom = 175.0
-text = ">"
-
-[node name="Arm" type="Label" parent="."]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 6.0
-offset_right = 118.0
-offset_bottom = 29.0
-text = "Arm
-"
-
-[node name="Leg" type="Label" parent="."]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 52.0
-offset_right = 118.0
-offset_bottom = 75.0
-text = "Leg"
-
-[node name="Appendages" type="Label" parent="."]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 150.0
-offset_right = 118.0
-offset_bottom = 173.0
-text = "Appendages"
-
-[node name="Chest" type="Label" parent="."]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 100.0
-offset_right = 118.0
-offset_bottom = 123.0
-text = "Chest"
-
 [node name="Point" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 270.0
-offset_top = 44.0
-offset_right = 320.0
-offset_bottom = 67.0
+offset_left = 760.0
+offset_top = 60.0
+offset_right = 886.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jlee4")
+theme_override_font_sizes/font_size = 40
 text = "Point: "
 
+[node name="Arm" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 120.0
+offset_right = 1002.0
+offset_bottom = 170.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3mwv7")
+
+[node name="Arm" type="Label" parent="Arm"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 91.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jlee4")
+theme_override_font_sizes/font_size = 30
+text = "Arm
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arm_Right" type="Button" parent="Arm"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -17.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gxo4l")
+icon = ExtResource("4_o5f72")
+
+[node name="Arm_Left" type="Button" parent="Arm"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -15.0
+offset_right = 26.0
+offset_bottom = 16.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7qg1")
+icon = ExtResource("5_y3ot1")
+
+[node name="Leg" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 190.0
+offset_right = 1002.0
+offset_bottom = 240.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjcgj")
+
+[node name="Leg" type="Label" parent="Leg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -40.0
+offset_right = -49.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jlee4")
+theme_override_font_sizes/font_size = 30
+text = "Leg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Leg_Right" type="Button" parent="Leg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -15.5
+offset_right = -6.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_52sbs")
+icon = ExtResource("4_o5f72")
+
+[node name="Leg_Left" type="Button" parent="Leg"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -15.5
+offset_right = 26.0
+offset_bottom = 15.5
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lp54b")
+icon = ExtResource("5_y3ot1")
+
+[node name="Chest" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 260.0
+offset_right = 1002.0
+offset_bottom = 310.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_urk4q")
+
+[node name="Chest_Left" type="Button" parent="Chest"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -15.0
+offset_right = 26.0
+offset_bottom = 16.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yb8mi")
+icon = ExtResource("5_y3ot1")
+
+[node name="Chest_Right" type="Button" parent="Chest"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -15.0
+offset_right = -6.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_k2thc")
+icon = ExtResource("4_o5f72")
+
+[node name="Chest" type="Label" parent="Chest"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -40.0
+offset_right = -15.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jlee4")
+theme_override_font_sizes/font_size = 30
+text = "Chest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Appendages" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 330.0
+offset_right = 1002.0
+offset_bottom = 380.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d0pep")
+
+[node name="Appendages_Left" type="Button" parent="Appendages"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -16.0
+offset_right = 26.0
+offset_bottom = 15.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_iuceu")
+icon = ExtResource("5_y3ot1")
+
+[node name="Appendages_Right" type="Button" parent="Appendages"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -15.5
+offset_right = -6.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vkeyl")
+icon = ExtResource("4_o5f72")
+
+[node name="Appendages" type="Label" parent="Appendages"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -41.0
+offset_right = 70.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_jlee4")
+theme_override_font_sizes/font_size = 30
+text = "Appendages"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Arm_Left" to="." method="_on_arm_left_pressed"]
-[connection signal="pressed" from="Arm_Right" to="." method="_on_arm_right_pressed"]
-[connection signal="pressed" from="Leg_Left" to="." method="_on_leg_left_pressed"]
-[connection signal="pressed" from="Leg_Right" to="." method="_on_leg_right_pressed"]
-[connection signal="pressed" from="Chest_Left" to="." method="_on_chest_left_pressed"]
-[connection signal="pressed" from="Chest_Right" to="." method="_on_chest_right_pressed"]
-[connection signal="pressed" from="Appendages_Left" to="." method="_on_appendages_left_pressed"]
-[connection signal="pressed" from="Appendages_Right" to="." method="_on_appendages_right_pressed"]
+[connection signal="pressed" from="Arm/Arm_Right" to="." method="_on_arm_right_pressed"]
+[connection signal="pressed" from="Arm/Arm_Left" to="." method="_on_arm_left_pressed"]
+[connection signal="pressed" from="Leg/Leg_Right" to="." method="_on_leg_right_pressed"]
+[connection signal="pressed" from="Leg/Leg_Left" to="." method="_on_leg_left_pressed"]
+[connection signal="pressed" from="Chest/Chest_Left" to="." method="_on_chest_left_pressed"]
+[connection signal="pressed" from="Chest/Chest_Right" to="." method="_on_chest_right_pressed"]
+[connection signal="pressed" from="Appendages/Appendages_Left" to="." method="_on_appendages_left_pressed"]
+[connection signal="pressed" from="Appendages/Appendages_Right" to="." method="_on_appendages_right_pressed"]

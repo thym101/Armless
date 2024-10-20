@@ -1,3 +1,6 @@
+Panel
+Control
+TextureRect
 Label
 Button
 VBoxContainer
@@ -5,12 +8,7 @@ PathFollow2D
 Path2D
 AnimatedSprite2D
 Line2D
-Panel
-TextureRect
-Control
 PathFollow2D
 Path2D
 Line2D
 TextureButton
-Container
-BoxContainer

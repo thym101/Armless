@@ -9,10 +9,10 @@ var add_point_appendages = 0
 
 func _process(delta):
 	$Point.text = "Point: " + str(Global.additionalPoint)
-	$Arm.text = "Arm: " + str(player_stats["arm"])
-	$Leg.text = "Leg: " + str(player_stats["leg"])
-	$Chest.text = "Chest: " + str(player_stats["chest"])
-	$Appendages.text = "Appendages: " + str(player_stats["appendages"])
+	$Arm/Arm.text = "Arm: " + str(player_stats["arm"])
+	$Leg/Leg.text = "Leg: " + str(player_stats["leg"])
+	$Chest/Chest.text = "Chest: " + str(player_stats["chest"])
+	$Appendages/Appendages.text = "Appendages: " + str(player_stats["appendages"])
 
 func _on_arm_left_pressed():
 	if add_point_arm > 0:
