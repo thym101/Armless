@@ -1,4 +1,4 @@
-res://Scene/background.tscn
+res://Scene/starting_menu.tscn
 res://Script/BaseEnemy.gd
 res://Script/Battle.gd
 res://Scene/choosecharactor.tscn
