@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpi15gawrs3dn"]
+
+[ext_resource type="Script" path="res://Script/StatIncrease.gd" id="1_fyyhh"]
+
+[node name="StatIncrease" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyyhh")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 200.0
+offset_right = 122.0
+offset_bottom = 231.0
+text = "Quit"
+
+[node name="Arm_Left" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "<"
+
+[node name="Arm_Right" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 2.0
+offset_right = 210.0
+offset_bottom = 33.0
+text = ">"
+
+[node name="Leg_Left" type="Button" parent="."]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 18.0
+offset_bottom = 79.0
+text = "<"
+
+[node name="Leg_Right" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 48.0
+offset_right = 210.0
+offset_bottom = 79.0
+text = ">"
+
+[node name="Chest_Left" type="Button" parent="."]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 18.0
+offset_bottom = 127.0
+text = "<"
+
+[node name="Chest_Right" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 96.0
+offset_right = 210.0
+offset_bottom = 127.0
+text = ">"
+
+[node name="Appendages_Left" type="Button" parent="."]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 18.0
+offset_bottom = 175.0
+text = "<"
+
+[node name="Appendages_Right" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 144.0
+offset_right = 210.0
+offset_bottom = 175.0
+text = ">"
+
+[node name="Arm" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 6.0
+offset_right = 118.0
+offset_bottom = 29.0
+text = "Arm
+"
+
+[node name="Leg" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 52.0
+offset_right = 118.0
+offset_bottom = 75.0
+text = "Leg"
+
+[node name="Appendages" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 150.0
+offset_right = 118.0
+offset_bottom = 173.0
+text = "Appendages"
+
+[node name="Chest" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 100.0
+offset_right = 118.0
+offset_bottom = 123.0
+text = "Chest"
+
+[node name="Point" type="Label" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 44.0
+offset_right = 320.0
+offset_bottom = 67.0
+text = "Point: "
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Arm_Left" to="." method="_on_arm_left_pressed"]
+[connection signal="pressed" from="Arm_Right" to="." method="_on_arm_right_pressed"]
+[connection signal="pressed" from="Leg_Left" to="." method="_on_leg_left_pressed"]
+[connection signal="pressed" from="Leg_Right" to="." method="_on_leg_right_pressed"]
+[connection signal="pressed" from="Chest_Left" to="." method="_on_chest_left_pressed"]
+[connection signal="pressed" from="Chest_Right" to="." method="_on_chest_right_pressed"]
+[connection signal="pressed" from="Appendages_Left" to="." method="_on_appendages_left_pressed"]
+[connection signal="pressed" from="Appendages_Right" to="." method="_on_appendages_right_pressed"]

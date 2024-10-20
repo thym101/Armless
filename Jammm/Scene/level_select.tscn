@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd5fejl010qdh"]
+[gd_scene load_steps=8 format=3 uid="uid://dd5fejl010qdh"]
 
 [ext_resource type="Texture2D" uid="uid://bce7nh8v1353s" path="res://pictures/Screen Shot 2024-10-19 at 10.50.44 PM.png" id="1_3krgx"]
 [ext_resource type="Script" path="res://Script/level_select.gd" id="1_fafk7"]
 [ext_resource type="PackedScene" uid="uid://ucc3hhl0naab" path="res://Scene/level_icon.tscn" id="1_nq6hm"]
 [ext_resource type="PackedScene" uid="uid://p0tt1xj8cpfx" path="res://Scene/player_icon.tscn" id="3_tkoou"]
+[ext_resource type="FontFile" uid="uid://dmjie0htcxto3" path="res://arcadeclassic (1)/ARCADECLASSIC.TTF" id="5_3jp5t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_and2o"]
 bg_color = Color(0.054902, 0.054902, 0.054902, 0.560784)
@@ -185,3 +186,9 @@ position = Vector2(7.99927, 0.108116)
 rotation = 1.58431
 scale = Vector2(2, 1.98438)
 frame_progress = 0.981799
+
+[node name="PlayerStats" type="Label" parent="."]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 84.0
+theme_override_fonts/font = ExtResource("5_3jp5t")

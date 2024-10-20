@@ -6,3 +6,5 @@ var second_target_name
 var second_target_value
 var sprite_path
 var frame_count
+var streak
+var additionalPoint

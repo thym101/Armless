@@ -1,14 +1,14 @@
+Label
+Button
+VBoxContainer
 PathFollow2D
 Path2D
 AnimatedSprite2D
 Line2D
 Panel
 TextureRect
-Button
-Label
 Control
 AnimationPlayer
 TextureButton
 Container
 BoxContainer
-Sprite2D

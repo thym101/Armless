@@ -37,3 +37,6 @@ offset_left = 128.0
 offset_top = 35.0
 offset_right = 168.0
 offset_bottom = 58.0
+
+[connection signal="pressed" from="VBoxContainer/Forgive" to="." method="_on_forgive_pressed"]
+[connection signal="pressed" from="VBoxContainer/Kill" to="." method="_on_kill_pressed"]
