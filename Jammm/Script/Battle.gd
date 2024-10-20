@@ -54,6 +54,8 @@ func _ready():
 		"appendages": enemy_stats.appendages
 	}
 	
+	print(enemy_body_parts)
+	
 	setup_enemy_animation()
 	setup_idle_animation()
 
@@ -242,6 +244,7 @@ func handle_attack(attack_type: String):
 	enemy_turn()
 
 func handle_player_defeat():
+	Global.streak = 0
 	display_text("You have been defeated!")
 	await get_tree().create_timer(3).timeout
 	close_textbox()
@@ -278,36 +281,36 @@ func handle_enemy_defeat():
 	
 	if highest.name == "arm":
 		Global.highest_target_name = highest.name
-		Global.highest_target_value = highest.value
+		Global.highest_target_value = enemy_stats.arm
 		Global.sprite_path = enemy_stats.sprite_path
 		Global.frame_count = enemy_stats.frame_count
 	if highest.name == "leg":
 		Global.highest_target_name = highest.name
-		Global.highest_target_value = highest.value
+		Global.highest_target_value = enemy_stats.leg
 		Global.sprite_path = enemy_stats.sprite_path
 		Global.frame_count = enemy_stats.frame_count
 	if highest.name == "chest":
 		Global.highest_target_name = highest.name
-		Global.highest_target_value = highest.value
+		Global.highest_target_value = enemy_stats.chest
 		Global.sprite_path = enemy_stats.sprite_path
 		Global.frame_count = enemy_stats.frame_count
 	if highest.name == "appendages":
 		Global.highest_target_name = highest.name
-		Global.highest_target_value = highest.value
+		Global.highest_target_value = enemy_stats.appendages
 		Global.sprite_path = enemy_stats.sprite_path
 		Global.frame_count = enemy_stats.frame_count
 	if second.name == "arm":
 		Global.second_target_name = second.name
-		Global.second_target_value = second.value
+		Global.second_target_value = enemy_stats.arm
 	if second.name == "leg":
 		Global.second_target_name = second.name
-		Global.second_target_value = second.value
+		Global.second_target_value = enemy_stats.leg
 	if second.name == "chest":
 		Global.second_target_name = second.name
-		Global.second_target_value = second.value
+		Global.second_target_value = enemy_stats.chest
 	if second.name == "appendages":
 		Global.second_target_name = second.name
-		Global.second_target_value = second.value
+		Global.second_target_value = enemy_stats.appendages
 	
 	display_text("Victory! Enemy defeated!")
 	await get_tree().create_timer(3).timeout

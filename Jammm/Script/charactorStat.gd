@@ -50,3 +50,7 @@ func set_health_stats():
 # Lấy tất cả chỉ số hiện tại của nhân vật
 func get_stats():
 	return character_stats
+	
+func update_stats(body_part: String, value: int):
+	if body_part.to_lower() in character_stats:
+		character_stats[body_part.to_lower()] += value
